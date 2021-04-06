@@ -1,0 +1,61 @@
+body {
+    background-color: whitesmoke;
+}
+
+.header {
+    text-align: center;
+    width: 50vw;
+    margin: auto;
+    background-color: sandybrown;
+}
+
+.title {
+    text-align: center;
+    width: 50vw;
+    margin: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.subtitle {
+    text-align: left;
+    margin: auto;
+    width: 50vw;
+}
+
+.page-title {
+    text-align: left;
+    margin: auto;
+    width: 50vw;
+    text-decoration: underline;
+}
+
+.table-heading {
+    background-color: rgb(202, 163, 128);
+}
+
+.footer {
+    margin: auto;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.img-footer {
+    margin: 8px;
+    width: 24px;
+    margin-top: 0px;
+}
+
+.img-product {
+    width: 96px;
+}
+
+.box {
+    background-color: antiquewhite;
+    padding: 8px;
+    text-align: justify;
+    width: 50vw;
+    margin: auto;
+    border: 1px solid black;
+    list-style-position: inside;
+}
