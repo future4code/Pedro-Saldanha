@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <p>Lojinha do Peu</p>
-    </div>
-    
-    <div>
+    <div class="header">
         <a href="./index.html">Página Inicial</a>
         <a href="./ctrl-estoque.html">Controle de Estoque</a>
         <a href="./add-produto.html">Adicionar Produto</a>
         <a href="./funcionarios.html">Funcionários</a>
     </div>
 
-    <h2>Controle de Estoque</h2>
+    <div class="subtitle">
+        <p>Lojinha do Peu</p>
+    </div>
+    
+    <h2 class="page-title">Controle de Estoque</h2>
 
-    <table>
-        <tr>
+    <table class="box">
+        <tr class="table-heading">
             <th>Foto</th>
             <th>Descrição</th>
             <th>Preço (R$)</th>
@@ -29,28 +30,28 @@
         </tr>
 
         <tr>
-            <td><img src="./img/notebook.jpg" alt="Notebook"/></td>
+            <td><img class="img-product" src="./img/notebook.jpg" alt="Notebook"/></td>
             <td>Notebook</td>
             <td>R$2000,00</td>
             <td>10 unidades</td>
         </tr>
 
         <tr>
-            <td><img src="./img/mouse.jpg" alt="Mouse"/></td>
+            <td><img class="img-product" src="./img/mouse.jpg" alt="Mouse"/></td>
             <td>Mouse</td>
             <td>R$100,00</td>
             <td>15 unidades</td>
         </tr>
 
         <tr>
-            <td><img src="./img/teclado.jpg" alt="Teclado"/></td>
+            <td><img class="img-product" src="./img/teclado.jpg" alt="Teclado"/></td>
             <td>Teclado</td>
             <td>R$150,00</td>
             <td>21 unidades</td>
         </tr>
 
         <tr>
-            <td><img src="./img/caixa-som.jpg" alt="Caixa de Som"/></td>
+            <td><img class="img-product" src="./img/caixa-som.jpg" alt="Caixa de Som"/></td>
             <td>Caixa de Som</td>
             <td>R$500,00</td>
             <td>9 unidades</td>
@@ -58,13 +59,23 @@
         
         <!-- Crie mais uma linha desta tabela abaixo \/ -->
         <tr>
-            <td><img src="./img/mousepad.jpg" alt="Mousepad"></td>
+            <td><img class="img-product" src="./img/mousepad.jpg" alt="Mousepad"></td>
             <td>Mousepad</td>
             <td>R$50,00</td>
             <td>13 unidades</td>
         </tr>
 
     </table>
+    
+    <div class="footer">
+        <p>Siga-nos nas redes sociais!</p>
+
+        <div>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
 
 </body>
 </html>
