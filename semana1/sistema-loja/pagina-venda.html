@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="./index.html">Página Inicial</a>
+        <a href="./ctrl-estoque.html">Controle de Estoque</a>
+        <a href="./pagina-venda.html">Vendas</a>
+        <a href="./historico-venda.html">Histórico</a>
+        <a href="./add-produto.html">Adicionar Produto</a>
+        <a href="./funcionarios.html">Funcionários</a>
+    </div>
+    <div class="subtitle">
+        <h3>Lojinha do Peu</h3>
+    </div>
+    
+    <h2 class="page-title">Formulário de Venda</h2>
+
+    <form action="" class="box">
+        <div>
+            <label for="funcinarios">Funcionário:</label>
+            <select name="funcionário" id="funcionarios" class="form-box">
+                <option value="amanda">Amanda</option>
+                <option value="lais">Laís</option>
+                <option value="pedro">Pedro</option>
+                <option value="joao">João</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="clientes">Cliente:</label>
+            <input type="text" id="clientes" name="cliente" class="form-box">
+        </div>
+
+        <div>
+            <label for="produtos">Produtos comprados:</label>
+            <input type="text" id="produtos" name="produtos" class="form-box">
+        </div>
+
+        <div>
+            <label for="horario">Horário:</label>
+            <input type="text" id="horario" name="horário" class="form-box">
+        </div>
+
+        <div>
+            <label for="data">Data da compra:</label>
+            <input type="date" id="data" name="data" class="form-box">
+        </div>
+
+        <div>
+            <label for="valor">Valor total (R$):</label>
+            <input type="number" id="valor" name="valor" class="form-box">
+        </div>
+
+        <div>
+            <label for="pagamento">Forma de pagamento:</label>
+            <select name="pagamento" id="pagamento" class="form-box">
+                <option value="dinheiro">Dinheiro</option>
+                <option value="cartao">Cartão</option>
+            </select>
+        </div>
+
+        <button type="submit">Concluir Venda</button>
+    </form>
+
+    <div class="footer">
+        <p>Siga-nos nas redes sociais!</p>
+
+        <div>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
+</body>
+</html>

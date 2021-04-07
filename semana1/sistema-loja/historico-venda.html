@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Vendas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="./index.html">Página Inicial</a>
+        <a href="./ctrl-estoque.html">Controle de Estoque</a>
+        <a href="./pagina-venda.html">Vendas</a>
+        <a href="./historico-venda.html">Histórico</a>
+        <a href="./add-produto.html">Adicionar Produto</a>
+        <a href="./funcionarios.html">Funcionários</a>
+    </div>
+
+    <div class="subtitle">
+        <h3>Lojinha do Peu</h3>
+    </div>
+
+    <h2 class="page-title">Histórico de Vendas</h2>
+
+    <table class="box">
+        <tr class="table-heading">
+            <th>Cliente</th>
+            <th>Atendido por</th>
+            <th>Produtos</th>
+            <th>Horário</th>
+            <th>Data</th>
+            <th>Valor (R$)</th>
+            <th>Pagamento</th>
+        </tr>
+
+        <tr>
+            <td>Joana</td>
+            <td>Amanda</td>
+            <td>1 Notebook</td>
+            <td>15:45</td>
+            <td>07/04/21</td>
+            <td>2000,00</td>
+            <td>Crédito</td>
+        </tr>
+
+        <tr>
+            <td>Fred</td>
+            <td>Pedro</td>
+            <td>2 Mouse</td>
+            <td>12:00</td>
+            <td>07/04/21</td>
+            <td>200,00</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>Maria</td>
+            <td>Laís</td>
+            <td>1 Teclado</td>
+            <td>10:21</td>
+            <td>07/04/21</td>
+            <td>150,00</td>
+            <td>Crédito</td>
+        </tr>
+
+    </table>
+    <form class="box-data" action="#">
+        <div>
+            <label for="filtro-data">Filtrar por data: </label>
+            <input type="date" id="filtro-data" name="filtro-data">
+        </div>
+    </form>
+
+    <div class="footer">
+        <p>Siga-nos nas redes sociais!</p>
+
+        <div>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="img-footer" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
+    
+</body>
+</html>
