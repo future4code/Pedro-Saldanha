@@ -33,8 +33,8 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
+.container-do-search img {
+    width: 20px;
 }
 
 .botao-amarelo {
