@@ -85,8 +85,12 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 15px 36vw;
 }
+
+/* #container-de-descricao>ol>li {
+    padding: 15px 0px;
+} */
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -142,6 +146,7 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    display: block;
     margin: auto;
 }
 
