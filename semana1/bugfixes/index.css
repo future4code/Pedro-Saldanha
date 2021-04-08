@@ -50,6 +50,10 @@ div>p:first-child {
     background-color: #c44f00;
 }
 
+.botao-amarelo:focus {
+    color: white;
+}
+
 .container {
     height: 500px;
     text-align: center;
@@ -111,6 +115,10 @@ td button {
     color: black;
 }
 
+td button:hover {
+    background-color: #a3913f;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
@@ -129,4 +137,8 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+#back-button:focus {
+    color: white;
 }
