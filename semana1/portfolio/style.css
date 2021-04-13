@@ -1,0 +1,104 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    margin: auto;
+    text-align: center;
+    min-width: 500px;
+    font-family: Roboto;
+    background-color: #ECE3F0;
+}
+
+header {
+    margin: 0px;
+    background-color: #EFE7D3;
+    padding: 30px;
+}
+
+.perfil-home {
+    width: 50vw;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#foto-perfil {
+    border-radius: 50%;
+    width: 400px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+}
+
+#texto-perfil {
+    text-align: justify;
+    background-color: #D3BBDD;
+    padding: 10px;
+    border-radius: 2%;
+}
+
+.secao-principal {
+    background-color: #D3BBDD;
+    width: 50vw;
+    margin: auto;
+    border-radius: 2%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formacao {
+    text-align: justify;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+.habilidades {
+    text-align: justify;
+    padding: 10px;
+}
+
+.instituicao {
+    display: inline;
+}
+
+.logo-instituicao {
+    width: 40px;
+}
+
+.logo {
+    width: 30px;
+}
+
+.contato {
+    margin: auto;
+    margin-top: 50px;
+    background-color: #D3BBDD;
+    padding: 10px;
+    border-radius: 2%;
+    width: 50vw;
+    height: 20vw;
+}
+
+.input-pequeno {
+    display: inline;
+    width: 40px;
+}
+
+footer {
+    bottom: 0;
+    margin: 10px;
+}
+
+.img-projetos {
+    width: 25vw;
+}
+
+.img-detalhe {
+    width: 50vw;
+}
+
+.projeto-detalhe {
+    width: 50vw;
+    margin: auto;
+    text-align: justify;
+}
