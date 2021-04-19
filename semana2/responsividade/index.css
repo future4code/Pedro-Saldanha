@@ -1,0 +1,153 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+
+#first-block {
+    background-color: red;
+    grid-column: 1/-1;
+    border: 1px solid black;
+}
+
+.first-group {
+    grid-row: 2/3;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 8px;
+    column-gap: 16px;
+}
+
+.second-group {
+    grid-row: 3/4;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 8px;
+    column-gap: 16px;
+}
+
+.black-group {
+    grid-column: 1/4;
+    grid-row: 4/7;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 8px;
+    column-gap: 16px;
+}
+
+.white-group {
+    grid-row: 7/8;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 8px;
+    column-gap: 16px;
+}
+
+.blue-block {
+    background-color: blue;
+    border: 1px solid black;
+    /* height: 100%; */
+}
+
+.yellow-block {
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.green-block {
+    background-color: green;
+    border: 1px solid black;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+
+.white-block {
+    background-color: white;
+    border: 1px solid black;
+}
+
+#main-container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    /* margin: 16px;
+    row-gap: 16px;
+    column-gap: 16px; */
+    /* width: 100%; */
+}
+
+@media screen and (max-device-width: 800px) {
+    #main-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        /* margin: 16px;
+        row-gap: 16px;
+        column-gap: 16px; */
+        /* width: 100%; */
+    }
+
+    .blue-block {
+        background-color: blue;
+        border: 1px solid black;
+        grid-column: 1/2;
+        /* height: 100%; */
+    }
+    
+    .yellow-block {
+        background-color: yellow;
+        border: 1px solid black;
+        grid-column: 2/3;
+    }
+    
+    .green-block {
+        background-color: green;
+        border: 1px solid black;
+        grid-column: 1/3;
+    }
+    
+    .black-block {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+    }
+    
+    
+    #white-block11 {
+        grid-column: 1/3;
+    }
+
+    .first-group {
+        row-gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: 2/4;
+    }
+
+    .second-group {
+        row-gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: 4/6;
+    }
+
+    .black-group {
+        row-gap: 8px;
+        grid-row: 6/9;
+    }
+
+    .white-group {
+        row-gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: 9/11;
+    }
+}
