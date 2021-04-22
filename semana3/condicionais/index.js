@@ -53,3 +53,157 @@
 // } else {
 //     console.log('Escolha outro filme :(')
 // }
+
+// desafio
+// 1.
+// let generoFilme = prompt('Qual o gênero do filme?')
+// let precoFilme = prompt('Qual o valor do ingresso?')
+// if ((generoFilme === 'Fantasia') && (precoFilme < 15)) {
+//     let snack = prompt('Qual snack você vai querer?')
+//     console.log('Bom filme!')
+//     console.log("com", snack)
+// } else {
+//     console.log('Escolha outro filme :(')
+// }
+
+// 2. 
+let nomeUsuario = prompt('Qual o seu nome?')
+let tipoJogo = prompt('Jogo nacional ou internacional?')
+let etapaJogo = prompt('Qual etapa da competição?')
+let categoria = Number(prompt('Qual a categoria?'))
+let quantidade = Number(prompt('Quantos ingressos?'))
+let valorIngresso;
+
+console.log('---Dados da compra---')
+console.log('Nome do cliente: ', nomeUsuario)
+
+if (tipoJogo === "IN") {
+    console.log('Tipo do jogo: Internacional')
+} else if (tipoJogo === "DO") {
+    console.log('Tipo do jogo: Nacional')
+}
+
+if (etapaJogo === "SF") {
+    console.log('Etapa do jogo: Semi-final')
+} else if (etapaJogo === "DT") {
+    console.log('Etapa do jogo: Terceiro lugar')
+} else if (etapaJogo === "FI") {
+    console.log('Etapa do jogo: Final')
+}
+
+switch (categoria) {
+    case 1:
+        console.log('Categoria: 1')
+        break
+    case 2:
+        console.log('Categoria: 2')
+        break
+    case 3:
+        console.log('Categoria: 3')
+        break
+    case 4:
+        console.log('Categoria: 4')
+        break
+}
+
+console.log('---Valores---')
+
+if (tipoJogo === 'IN') {
+    if (etapaJogo === 'SF') {
+        switch (categoria) {
+            case 1:
+                valorIngresso = 1320 / 4.1
+                break
+            case 2:
+                valorIngresso = 880 / 4.1
+                break
+            case 3:
+                valorIngresso = 550 / 4.1
+                break
+            case 4:
+                valorIngresso = 220 / 4.1
+                break
+        }
+    } else if (etapaJogo === 'DT') {
+        switch (categoria) {
+            case 1:
+                valorIngresso = 660 / 4.1
+                break
+            case 2:
+                valorIngresso = 440 / 4.1
+                break
+            case 3:
+                valorIngresso = 330 / 4.1
+                break
+            case 4:
+                valorIngresso = 170 / 4.1
+                break
+        }
+    } else if (etapaJogo === 'FI') {
+        switch (categoria) {
+            case 1:
+                valorIngresso = 1980 / 4.1
+                break
+            case 2:
+                valorIngresso = 1320 / 4.1
+                break
+            case 3:
+                valorIngresso = 880 / 4.1
+                break
+            case 4:
+                valorIngresso = 330 / 4.1
+                break
+        }
+    }
+    console.log('Valor do ingresso: U$ ', valorIngresso)
+    console.log('Valor total: U$ ', valorIngresso*quantidade)
+} else if (tipoJogo === 'DO') {
+    if (etapaJogo === 'SF') {
+        switch (categoria) {
+            case 1:
+                valorIngresso = 1320
+                break
+            case 2:
+                valorIngresso = 880
+                break
+            case 3:
+                valorIngresso = 550
+                break
+            case 4:
+                valorIngresso = 220
+                break
+        }
+    } else if (etapaJogo === 'DT') {
+        switch (categoria) {
+            case 1:
+                valorIngresso = 660
+                break
+            case 2:
+                valorIngresso = 440
+                break
+            case 3:
+                valorIngresso = 330
+                break
+            case 4:
+                valorIngresso = 170 
+                break
+        }
+    } else if (etapaJogo === 'FI') {
+        switch (categoria) {
+            case 1:
+                valorIngresso = 1980
+                break
+            case 2:
+                valorIngresso = 1320
+                break
+            case 3:
+                valorIngresso = 880
+                break
+            case 4:
+                valorIngresso = 330
+                break
+        }
+    }
+    console.log('Valor do ingresso: R$ ', valorIngresso)
+    console.log('Valor total: R$ ', valorIngresso*quantidade)
+}
