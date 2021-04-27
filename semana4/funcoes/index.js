@@ -69,15 +69,15 @@ const arrayGeral = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
 
 // console.log(checarArray(arrayGeral))
 // b.
-// function checarNumeroPar(x) {
-//     if (numero%2 === 0) {
-//         numero = true
-//     } else {
-//         numero = false
-//     }
-//     return numero
-// }
-// console.log(checarNumeroPar(2))
+function checarNumeroPar(numero) {
+    if (numero%2 === 0) {
+        numero = true
+    } else {
+        numero = false
+    }
+    return numero
+}
+console.log(checarNumeroPar(2))
 
 // c.
 // let arrayPar = []
@@ -95,12 +95,7 @@ const arrayGeral = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
 let arrayPar = []
 function verificarNumerosParesArray(array) {
     for (let numero of array) {
-        if (numero%2 === 0) {
-            numero = Boolean(true)
-        } else {
-            numero = Boolean(false)
-        }
-        if (numero === Boolean(true)) {
+        if (checarNumeroPar(numero)) {
             arrayPar.push(numero);
         }
     }
