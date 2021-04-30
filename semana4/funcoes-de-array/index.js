@@ -10,10 +10,10 @@ function imprimirDespesas(despesas){
 
     // AQUI VEM A IMPLEMENTAÇÃO
     despesas.forEach((despesa) => {
-        divDespesas.innerHTML += `<p>Valor: ${despesa.valor} | Tipo: ${despesa.tipo} | Descrição: ${despesa.descricao}`
+        divDespesas.innerHTML += `<p> Valor: ${despesa.valor} | Tipo: ${despesa.tipo} | Descrição: ${despesa.descricao}`
     })
 }
-
+   
 
 // SEGUNDO 
 function imprimirExtrato(){
@@ -23,21 +23,23 @@ function imprimirExtrato(){
     let gastoUtilidades = 0
     let gastoViagem = 0
 
-
-    // AQUI VEM A IMPLEMENTAÇÃO
-    arrDespesas.forEach((despesa) => {
-        if (despesa.tipo === 'alimentação'){
+       // AQUI VEM A IMPLEMENTAÇÃO
+       arrDespesas.forEach((despesa) => {
+        if (despesa.tipo === "alimentação"){
             gastoAlimentacao += despesa.valor
         }
-        if (despesa.tipo === 'viagem'){
+        
+        if (despesa.tipo === "viagem"){
             gastoViagem += despesa.valor
         }
-        if (despesa.tipo === 'utilidades'){
+        
+        if (despesa.tipo === "utilidades"){
             gastoUtilidades += despesa.valor
         }
-        gastoTotal += gastoUtilidades + gastoAlimentacao + gastoViagem
-    })
 
+        gastoTotal = gastoUtilidades + gastoViagem + gastoAlimentacao
+    })
+  
     divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$${gastoTotal} | Alimentação: R$${gastoAlimentacao} | 
                                         Utilidades: R$${gastoUtilidades} | Viagem: R$${gastoViagem}</p>`
 }
@@ -86,10 +88,18 @@ function filtrarDespesas(){
     let valorMin = Number(document.getElementById('valorFiltroMin').value)
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
 
-
-    let despesasFiltradas // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
-
+ // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
+    let despesasFiltradas = arrDespesas.filter((despesa) => {
+        if (despesa.tipo === tipoFiltro && despesa.valor >= valorMin && despesa.valor <= valorMax) {
+            return true
+        }
+        if (tipoFiltro === 'todos') {
+            return true
+        }
+    })
+       
     imprimirDespesas(despesasFiltradas)
+    limparFiltros()
 }
 
 
