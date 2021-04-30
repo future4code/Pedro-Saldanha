@@ -13,6 +13,13 @@ function inverteArray(array) {
 
 function retornaNumerosParesElevadosADois (array) {
    // implemente sua lógica aqui
+   let arrayParAoQuadrado = []
+   for (let numero of array){
+      if (numero%2 === 0) {
+         arrayParAoQuadrado.push(numero*numero)
+      }
+   }
+   return arrayParAoQuadrado
   }
 
 //Exercício 3
