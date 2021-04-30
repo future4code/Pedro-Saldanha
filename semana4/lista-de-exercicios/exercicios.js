@@ -67,6 +67,15 @@ function retornaExpressoesBooleanas() {
 
 function retornaNNumerosPares(n) {
    // implemente sua lógica aqui
+   par = []
+   i = 0
+    while( i < n*2) {
+       if (i%2 === 0){
+          par.push(i)
+       }
+       i++
+    }
+    return par
 }
 
 // Exercício 8
