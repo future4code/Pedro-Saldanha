@@ -13,82 +13,42 @@ function inverteArray(array) {
 
 function retornaNumerosParesElevadosADois (array) {
    // implemente sua lógica aqui
-   let arrayParAoQuadrado = []
-   for (let numero of array){
-      if (numero%2 === 0) {
-         arrayParAoQuadrado.push(numero*numero)
-      }
-   }
-   return arrayParAoQuadrado
-}
+  }
 
 //Exercício 3
 
 function retornaNumerosPares (array) {
    // implemente sua lógica aqui
-   let arrayPar =[]
-   for (let numero of array){
-      if (numero%2 === 0){
-         arrayPar.push(numero)
-      }
-   }
-   return arrayPar
 }
 
 //Exercício 4
 
 function retornaMaiorNumero(array) {
    // implemente sua lógica aqui
-   let maiorNumero = 0
-   for (numero of array){
-      if (numero > maiorNumero) {
-         maiorNumero = numero
-      }
-   }
-   return maiorNumero
-
 }
 
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
    // implemente sua lógica aqui
-   return array.length
 }
 
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
    // implemente sua lógica aqui
-   let respostas = [false, false, true, true, true]
-   return respostas
 }
 
 //Exercício 7
 
 function retornaNNumerosPares(n) {
    // implemente sua lógica aqui
-  par = 0
-   while(par < n*2) {
-      if (par%2 === 0){
-         return par
-      }
-      par++
-   }
 }
 
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
   // implemente sua lógica aqui
-  if (a === b === c) {
-     console.log(oi)
-     return 'Equilátero'
-   } else if (a === b !== c || a === c !==b || a !== b === c) {
-      return 'Isósceles'
-   } else if (a !== b !== c) {
-      return 'Escaleno'
-   }
 }
 
 // Exercício 9
