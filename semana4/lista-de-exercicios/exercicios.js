@@ -212,14 +212,22 @@ function anonimizaPessoa(pessoa) {
       endereco: "Rua do Futuro, 4"
    }
 
-   const pessoaAnonima = {
-      nome: "ANÔNIMO",
-      idade: pessoaAstro.idade,
-      email: pessoaAstro.email,
-      endereco: pessoaAstro.endereco
+   // const pessoaAnonima = {
+   //    nome: "ANÔNIMO",
+   //    idade: pessoaAstro.idade,
+   //    email: pessoaAstro.email,
+   //    endereco: pessoaAstro.endereco
+   // }
+
+   function pessoaAnonima(pessoa){
+      return{
+         ...pessoa,
+         nome: "ANÔNIMO"
+      }
+
    }
 
-   return pessoaAnonima
+   return pessoaAnonima(pessoaAstro)
 }
 
 // Exercício 16
@@ -235,12 +243,24 @@ const arrayDePessoas = [
 
 function maioresDe18(arrayDePessoas) {
    // implemente sua lógica aqui
+      const arrayAdultos = arrayDePessoas.filter((pessoa) => {
+         if (pessoa.idade >= 18) {
+            return pessoa
+         }
+      })
+      return arrayAdultos
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
    // implemente sua lógica aqui
+   const arrayMenores = arrayDePessoas.filter((pessoa) => {
+      if (pessoa.idade < 18) {
+         return pessoa
+      }
+   })
+   return arrayMenores
 }
 
 // Exercício 17, letra A
