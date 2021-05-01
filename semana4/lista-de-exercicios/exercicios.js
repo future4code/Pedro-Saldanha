@@ -212,22 +212,14 @@ function anonimizaPessoa(pessoa) {
       endereco: "Rua do Futuro, 4"
    }
 
-   // const pessoaAnonima = {
-   //    nome: "ANÔNIMO",
-   //    idade: pessoaAstro.idade,
-   //    email: pessoaAstro.email,
-   //    endereco: pessoaAstro.endereco
-   // }
-
-   function pessoaAnonima(pessoa){
-      return{
-         ...pessoa,
-         nome: "ANÔNIMO"
-      }
-
+   const pessoaAnonima = {
+      nome: "ANÔNIMO",
+      idade: pessoaAstro.idade,
+      email: pessoaAstro.email,
+      endereco: pessoaAstro.endereco
    }
 
-   return pessoaAnonima(pessoaAstro)
+   return pessoaAnonima
 }
 
 // Exercício 16
@@ -267,18 +259,37 @@ function menoresDe18(arrayDePessoas) {
 
 function multiplicaArrayPor2(array) {
    // implemente sua lógica aqui
+   const arrayPor2 = array.map((numero) => {
+      return numero*2
+   })
+   return arrayPor2
 }
 
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
   // implemente sua lógica aqui
+   const arrayPor2 = array.map((numero) => {
+      return numero*2
+   })
+   const arrayStringPor2 = arrayPor2.map((numero)=> {
+      return numero.toString()
+   })
+   return arrayStringPor2
 }
 
 // Exercício 17, letra C
 
 function verificaParidade(array) {
    // implemente sua lógica aqui
+   const arrayParidade = array.map((numero) => {
+      if (numero%2 === 0) {
+         return `${numero} é par`
+      } else if (numero%2 === 1){
+         return `${numero} é ímpar`
+      }
+   })
+   return arrayParidade
 }
 
 // Exercício 18
