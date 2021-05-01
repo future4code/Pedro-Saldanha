@@ -350,7 +350,16 @@ const consultasNome = [
  //Exercício 19, letra A
  
  function ordenaPorNome() {
-  
+   for (let i = 0; i < consultasNome.length; i++){
+      for(let j = 0; j < consultasNome.length; j++) {
+         if (consultasNome[j] > consultasNome[j+1]) {
+            let temp = consultasNome[j]
+            consultasNome[j] = consultasNome[j+1]
+            consultasNome[j+1] = temp
+         }
+      }
+   }
+   return consultasNome
  }
  
  // Exercício 19, letra B
@@ -379,4 +388,5 @@ const contas = [
 
 function atualizaSaldo() {
   // implemente sua lógica aqui
+
 }
