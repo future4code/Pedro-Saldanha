@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
+import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import PerfilImagem from './components/imgs/perfil.jpg';
 import LabenuImg from './components/imgs/labenu.png';
 import UFFImg from './components/imgs/uff2.png';
+import EmailImg from './components/imgs/email2.png';
+import LocationImg from './components/imgs/location2.png';
 
 function App() {
   return (
@@ -20,6 +23,20 @@ function App() {
         <ImagemButton 
           imagem="https://image.flaticon.com/icons/png/512/117/117472.png" 
           texto="Ver mais"
+        />
+      </div>
+
+      <div className="page-section-container">
+        <CardPequeno
+          imagem={EmailImg}
+          info="Email: "
+          descricao="peu@abc.com"
+        />
+
+        <CardPequeno
+          imagem={LocationImg}
+          info="Endereço: "
+          descricao="Rua dos bobos, número 0"
         />
       </div>
 
