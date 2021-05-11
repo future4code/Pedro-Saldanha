@@ -18,9 +18,6 @@ function Pagina2() {
             <p>6. Qual a unidade de ensino?</p>
             <input />
 
-            <br />
-            <button>Próxima Etapa</button>
-
         </FormContainer>
     );
 }

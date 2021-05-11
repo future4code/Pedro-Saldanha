@@ -25,9 +25,6 @@ function Pagina3() {
                 <option value="Curso de inglês">Curso de inglês</option>
             </select>
 
-            <br />
-            <button>Próxima Etapa</button>
-
         </FormContainer>
     );
 }

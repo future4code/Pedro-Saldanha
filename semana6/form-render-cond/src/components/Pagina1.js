@@ -32,8 +32,6 @@ function Pagina1() {
                 <option value="Ensino superior incompleto">Ensino superior incompleto</option>
                 <option value="Ensino superior completo">Ensino superior completo</option>
             </select>
-            <br />
-            <button>Próxima Etapa</button>
 
         </FormContainer>
     );
