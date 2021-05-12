@@ -9,7 +9,7 @@ const TarefaList = styled.ul`
 
 const Tarefa = styled.li`
   text-align: left;
-  text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+  text-decoration: ${({ completa }) => (completa ? 'line-through' : 'none')};
 `
 
 const InputsContainer = styled.div`
@@ -19,22 +19,22 @@ const InputsContainer = styled.div`
 `
 
 class App extends React.Component {
-    state = {
-      tarefas: [
-        {
-          id: Date.now(), // Explicação abaixo
-          texto: 'Texto da tarefa',
-          completa: false // Indica se a tarefa está completa (true ou false)
-        },
-        {
-          id: Date.now(), // Explicação abaixo
-          texto: 'Texto da segunda tarefa',
-          completa: true // Indica se a tarefa está completa (true ou false)
-        }
-      ],
-      inputValue: '',
-      filtro: ''
-    }
+  state = {
+    tarefas: [
+      {
+        id: Date.now(), // Explicação abaixo
+        texto: 'Texto da tarefa',
+        completa: false // Indica se a tarefa está completa (true ou false)
+      },
+      {
+        id: Date.now(), // Explicação abaixo
+        texto: 'Texto da segunda tarefa',
+        completa: true // Indica se a tarefa está completa (true ou false)
+      }
+    ],
+    inputValue: '',
+    filtro: ''
+  }
 
   componentDidUpdate() {
 
@@ -45,19 +45,39 @@ class App extends React.Component {
   };
 
   onChangeInput = (event) => {
-
+    return this.setState({ inputValue: event.target.value })
   }
 
   criaTarefa = () => {
+    const novaTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false
+    }
+
+    const novoTarefas = [...this.state.tarefas, novaTarefa]
+    this.setState({ tarefas: novoTarefas })
 
   }
 
   selectTarefa = (id) => {
+    const clicarTarefas = this.state.tarefas.map((tarefa) => {
+      if (id === tarefa.id) {
+        const novaTarefa = {
+          ...tarefa,
+          completa: !tarefa.completa
+        }
+        return novaTarefa
+      } else {
+        return tarefa
+      }
+    })
 
+    this.setState({ tarefas: clicarTarefas })
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({ filtro: event.target.value })
   }
 
   render() {
@@ -76,10 +96,10 @@ class App extends React.Component {
       <div className="App">
         <h1>Lista de tarefas</h1>
         <InputsContainer>
-          <input value={this.state.inputValue} onChange={this.onChangeInput}/>
+          <input value={this.state.inputValue} onChange={this.onChangeInput} />
           <button onClick={this.criaTarefa}>Adicionar</button>
         </InputsContainer>
-        <br/>
+        <br />
 
         <InputsContainer>
           <label>Filtro</label>
