@@ -1,6 +1,6 @@
 import React from 'react';
-import CreateUser from './Pages/CreateUser';
-import UsersList from './Pages/UsersList';
+import CreateUser from './components/CreateUser';
+import UsersList from './components/UsersList';
 import styled from 'styled-components'
 
 const MainContainer = styled.div `
