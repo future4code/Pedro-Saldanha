@@ -1,6 +1,14 @@
 import React from 'react';
 import CreateUser from './Pages/CreateUser';
 import UsersList from './Pages/UsersList';
+import styled from 'styled-components'
+
+const MainContainer = styled.div `
+  display:flex;
+  text-align:center;
+  flex-direction: column;
+`
+
 
 export default class App extends React.Component {
   state = {
@@ -26,8 +34,7 @@ export default class App extends React.Component {
   render() {
 
     return (
-      <div>
-
+      <MainContainer>
         <div>
           <h1>Labenusers</h1>
           <button onClick={this.changePage}>Trocar de página</button>
@@ -35,7 +42,7 @@ export default class App extends React.Component {
 
         {this.renderPage()}
 
-      </div>
+      </MainContainer>
     );
   }
 }
