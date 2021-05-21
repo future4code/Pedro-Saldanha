@@ -81,12 +81,12 @@ export default class App extends React.Component {
       if (this.state.renderCat === "img") {
         return <div>
           <img src={catPics} alt={"cat pic"}></img>
-          <p>have a cat day</p>
+          <p>have a cat day!</p>
         </div>
       } else if (this.state.renderCat === "gif") {
         return <div>
           <img src={catGifs} alt={"cat pic"}></img>
-          <p>have a cat day</p>
+          <p>have a cat day!</p>
         </div>
       }
     }
@@ -95,12 +95,12 @@ export default class App extends React.Component {
     return (
       <MainContainer>
         <GlobalStyle />
-        
-        <h2>A cat a day</h2>
+
+        <h2>a cat a day</h2>
         <h4>(or as many as you like)</h4>
         <div>
-          <button onClick={this.getCatPic}>Get a cat pic</button>
-          <button onClick={this.getCatGif}>Get a cat gif</button>
+          <button onClick={this.getCatGif}>get a cat gif</button>
+          <button onClick={this.getCatPic}>get a cat pic</button>
         </div>
 
         {renderPage()}
