@@ -18,7 +18,8 @@ body{
 
 export default class App extends React.Component {
   state = {
-    playlists: []
+    playlists: [],
+    tracks: []
   }
 
   header = {
@@ -54,6 +55,16 @@ export default class App extends React.Component {
     }
   }
 
+  getPlaylistDetails = (id) => {
+    axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`, this.header)
+      .then((res) => {
+        this.setState({ tracks: res.data.result.tracks })
+      })
+      .catch((err) => {
+        console.log(err.response)
+      })
+    }
+
   render() {
 
     return (
@@ -70,10 +81,15 @@ export default class App extends React.Component {
           getPlaylists={this.getPlaylists}
           playlists={this.state.playlists}
           deletePlaylist={this.deletePlaylist}
+          getPlaylistDetails={this.getPlaylistDetails}
         />
-        <hr/>
+        <hr />
 
-        <PlaylistDetails />
+        <PlaylistDetails
+          getPlaylistDetails={this.getPlaylistDetails}
+          tracks={this.state.tracks}
+          playlists={this.state.playlists}
+        />
 
       </div>
     );

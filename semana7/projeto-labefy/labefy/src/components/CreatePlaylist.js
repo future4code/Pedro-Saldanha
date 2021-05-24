@@ -18,7 +18,7 @@ export default class CreatePlaylist extends React.Component {
                 this.props.getPlaylists()
             })
             .catch((err) => {
-                console.log(err.response.data)
+                alert(err.response.data.message)
             })
 
     }
@@ -31,7 +31,7 @@ export default class CreatePlaylist extends React.Component {
 
         return (
             <div>
-                <h2>Dê um nome a sua nova playlist:</h2>
+                <h3>Dê um nome a sua nova playlist:</h3>
                 <input
                     placeholder={'Nova playlist'}
                     onChange={this.handlePlaylistName}
