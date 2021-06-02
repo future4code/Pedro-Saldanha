@@ -52,7 +52,7 @@ function TelaInicial() {
         <div>
             {profile.profile ? (
                 <>
-                    <img src={profile.profile.photo} />
+                    <img src={profile.profile.photo} alt='img' />
                     <h2>{profile.profile.name}</h2>
                     <p>{profile.profile.bio}</p>
                     <button onClick={()=> chooseReject(profile.profile.id)}>x</button>
