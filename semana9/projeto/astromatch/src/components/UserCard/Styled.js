@@ -15,19 +15,23 @@ export const Card = styled.div`
 `
 export const ProfilePic = styled.div`
     width:100%;
-    height:300px;
+    height:456px;
     background-size: cover;
     background-position: center;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-Content: flex-end;
 
 `
 
 
 export const TextContainer = styled.div`
     width: 100%;
-    height: 156px;
     box-sizing:border-box;
     margin:0;
     padding:0 10px;
+    color:white;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, transparent 0%, black 100%);
 `
