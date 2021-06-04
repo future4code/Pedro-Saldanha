@@ -61,6 +61,7 @@ function TelaInicial() {
             ) : (
                 <p>Carregando...</p>
             )}
+            
         </div>
     );
 }

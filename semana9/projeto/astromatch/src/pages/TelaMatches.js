@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Box from '@material-ui/core/Box';
 import axios from "axios";
+import LimpaMatches from "../components/LimpaMatches";
 
 
 function TelaMatches() {
@@ -27,9 +28,7 @@ function TelaMatches() {
         <Box display="flex" justifyContent="center" alignItems="center" flexDirection="column">
             <Header />
 
-            {matches ? (
-                <>
-
+            {matches.length ? (
                     <ul>
                         {matches.map((match) => {
                             return <li>
@@ -38,10 +37,12 @@ function TelaMatches() {
                             </li>
                         })}
                     </ul>
-
-                </>
             ) :
-                (<p>Carregando...</p>)}
+                (<p>Tente mais um pouco, o match perfeito já vem</p>)}
+                
+            <LimpaMatches 
+                getMatches={getMatches}
+            />
         </Box>
     );
 }
