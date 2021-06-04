@@ -3,7 +3,11 @@ import Box from '@material-ui/core/Box';
 import ClearAllIcon from '@material-ui/icons/ClearAll';
 import Button from '@material-ui/core/Button';
 import axios from "axios";
+import styled from "styled-components";
 
+const ClearBox = styled(Box)`
+    margin:16px;
+`
 
 function LimpaMatches(props) {
 
@@ -12,7 +16,7 @@ function LimpaMatches(props) {
             .then(() => {
                 
                 alert('Hora de procurar novos matches')
-                props.getMatches()
+                props.getProfile()
             })
             .catch((err) => {
                 console.log(err)
@@ -20,7 +24,7 @@ function LimpaMatches(props) {
     }
 
     return (
-        <Box>
+        <ClearBox>
 
             <Button
                 variant="outlined"
@@ -32,7 +36,7 @@ function LimpaMatches(props) {
 
             </Button>
 
-        </Box>
+        </ClearBox>
     );
 }
 
