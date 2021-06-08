@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import AdminHome from './pages/AdminHomePage';
+import ApplicationForm from './pages/ApplicationFormPage';
+import CreateTrip from './pages/CreateTripPage';
+import Home from './pages/HomePage';
+import ListTrips from './pages/ListTripsPage';
+import Login from './pages/LoginPage';
+import TripDetails from './pages/TripDetailsPage';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Home />
+      <AdminHome />
+      <ApplicationForm />
+      <CreateTrip />
+      <ListTrips />
+      <Login />
+      <TripDetails />
     </div>
   );
 }
