@@ -18,12 +18,15 @@ function AdminHome() {
 
   return (
     <div>
-      <p>Painel Administrativo</p>
       <div>
-        <button onClick={() => goToCreateTrip(history)}>Criar Viagem</button>
-        <button onClick={() => goToHome(history)}>Voltar</button>
-        <button onClick={onclickLogout}>Logout</button>
+        <p>Painel Administrativo</p>
+        <div>
+          <button onClick={() => goToCreateTrip(history)}>Criar Viagem</button>
+          <button onClick={() => goToHome(history)}>Voltar</button>
+          <button onClick={onclickLogout}>Logout</button>
+        </div>
       </div>
+
     </div>
   );
 }
