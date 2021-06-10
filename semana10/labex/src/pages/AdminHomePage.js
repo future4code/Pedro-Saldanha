@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { } from 'react';
 import { useHistory } from 'react-router';
-import { goBack, goToCreateTrip } from '../routes/coordinator';
+import { useProtectedPage } from '../hooks/useProtectedPage';
+import { goToCreateTrip, goToHome } from '../routes/coordinator';
 
 
 function AdminHome() {
   const history = useHistory()
+
+  useProtectedPage();
+
+  const onclickLogout = () => {
+    localStorage.removeItem("token")
+    goToHome(history)
+  }
+
   return (
     <div>
-      <p>AdminHome</p>
+      <p>Painel Administrativo</p>
       <div>
         <button onClick={() => goToCreateTrip(history)}>Criar Viagem</button>
-        <button onClick={() => goBack(history)}>Voltar</button>
-        <button>Logout</button>
+        <button onClick={() => goToHome(history)}>Voltar</button>
+        <button onClick={onclickLogout}>Logout</button>
       </div>
     </div>
   );
