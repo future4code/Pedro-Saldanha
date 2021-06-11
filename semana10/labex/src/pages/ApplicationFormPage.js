@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React from 'react';
 import { useHistory } from 'react-router';
+import { header } from '../constants/headers';
 import { BASE_URL } from '../constants/urls';
 import useForm from '../hooks/useForm';
 import useRequestData from '../hooks/useRequestData';
@@ -8,7 +10,7 @@ import { goBack } from '../routes/coordinator';
 
 function ApplicationForm() {
   const history = useHistory()
-  const trips = useRequestData(`${BASE_URL}/trips`, {})
+  const [trips] = useRequestData(`${BASE_URL}/trips`, {})
 
   const { form, onChange, cleanFields } = useForm(
     {
@@ -17,7 +19,7 @@ function ApplicationForm() {
       applicationText: "",
       profession: "",
       country: "",
-      trip: ""
+      id: ""
     }
   )
 
@@ -25,8 +27,21 @@ function ApplicationForm() {
 
   const onSubmitApplication = (event) => {
     event.preventDefault()
+    const body = {
+      name: form.name,
+      age: form.age,
+      applicationText: form.applicationText,
+      profession: form.profession,
+      country: form.country
+    }
 
-    console.log(form)
+    axios.post(`${BASE_URL}/trips/${form.id}/apply`, body)
+      .then((res) => {
+        console.log(res)
+      }).catch((err) => {
+        console.log(err.response.data.message)
+      })
+
     cleanFields()
   }
 
@@ -34,11 +49,11 @@ function ApplicationForm() {
     <div>
       <p>ApplicationForm</p>
       <form onSubmit={onSubmitApplication}>
-        <select name="trip" value={form.trip.id}
+        <select name="id" value={form.id}
           onChange={onChange} required>
           <option defaultValue="selected">Selecionar viagem</option>
           {trips.trips && trips.trips.map((trip) => {
-            return <option key={trip.id}>{trip.name} - {trip.planet}</option>
+            return <option value={trip.id} key={trip.id}>{trip.name} - {trip.planet}</option>
           })}
         </select>
         <input

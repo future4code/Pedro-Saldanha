@@ -5,7 +5,7 @@ import axios from "axios";
 const useRequestData = (url, initialState) => {
     const [data, setData] = useState(initialState)
 
-    const getData = () => {
+    const getData = (url) => {
         axios.get(url)
             .then((res) => {
                 setData(res.data)
@@ -17,10 +17,10 @@ const useRequestData = (url, initialState) => {
 
 
     useEffect(() => {
-        getData()
-    }, [])
+        getData(url)
+    }, [url])
 
-    return data
+    return [data, getData]
 }
 
 export default useRequestData

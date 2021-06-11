@@ -19,7 +19,7 @@ const Router = () => {
                     <ListTrips />
                 </Route>
 
-                <Route exact path='/trips/application'>
+                <Route exact path='/trips/application/'>
                     <ApplicationForm />
                 </Route>
 

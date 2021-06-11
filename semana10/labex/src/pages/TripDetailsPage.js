@@ -5,12 +5,14 @@ import { goBack } from '../routes/coordinator';
 import { BASE_URL } from '../constants/urls';
 import { header } from '../constants/headers'
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 
 
 function TripDetails() {
   const history = useHistory()
   const [trip, setTrip] = useState({})
+  const params = useParams()
 
   useProtectedPage();
 
@@ -26,16 +28,41 @@ function TripDetails() {
   }
 
   useEffect(() => {
-    getTripDetail("67nilY8HZyWMYlVeJxsC")
+    getTripDetail(params.id)
   }, [])
 
   return (
     <div>
-      <p>TripDetails</p>
-      <p>{trip.planet}</p>
       <div>
+        <h1>{trip.name}</h1>
         <button onClick={() => goBack(history)}>Voltar</button>
       </div>
+
+      <div>
+        <h3>{trip.name}</h3>
+        <p>{trip.description}</p>
+        <p>{trip.planet}</p>
+        <p>{trip.durationInDays}</p>
+        <p>{trip.date}</p>
+      </div>
+
+      <div>
+        <h3>Candidatos aprovados</h3>
+      </div>
+
+      <div>
+        <h3>Candidatos Pendentes</h3>
+        {trip.candidates && trip.candidates.map((candidate) => {
+          return <div key={candidate.id}>
+            <h3>{candidate.name}</h3>
+            <p>{candidate.profession}</p>
+            <p>{candidate.age}</p>
+            <p>{candidate.country}</p>
+            <p>{candidate.applicationText}</p>
+          </div>
+        })}
+      </div>
+
     </div>
   );
 }

@@ -7,17 +7,30 @@ import useRequestData from '../hooks/useRequestData'
 
 function ListTrips() {
   const history = useHistory()
-  const trips = useRequestData(`${BASE_URL}/trips`, {})
+  const [trips] = useRequestData(`${BASE_URL}/trips`, {})
 
 
   return (
     <div>
-      <p>Lista de Viagens</p>
       <div>
-        {trips.trips && console.log(trips.trips)}
-        <button onClick={() => goToApplicationForm(history)}>Inscrever-se</button>
-        <button onClick={() => goBack(history)}>Voltar</button>
+        <h1>Lista de Viagens</h1>
+        <div>
+          <button onClick={() => goToApplicationForm(history)}>Inscrever-se</button>
+          <button onClick={() => goBack(history)}>Voltar</button>
+        </div>
       </div>
+
+      {trips.trips && trips.trips.map((trip) => {
+        return <div key={trip.id}>
+          <h3>{trip.name}</h3>
+          <p>{trip.description}</p>
+          <p>{trip.planet}</p>
+          <p>{trip.durationInDays}</p>
+          <p>{trip.date}</p>
+        </div>
+      })}
+
+
     </div>
   );
 }
