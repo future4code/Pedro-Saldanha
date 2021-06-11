@@ -10,6 +10,18 @@ function ListTrips() {
   const [trips] = useRequestData(`${BASE_URL}/trips`, {})
 
 
+  // const orderDate = (tripDate) => {
+  //   const year = tripDate.slice(0, 4)
+  //   const month = tripDate.slice(5, 7)
+  //   const day = tripDate.slice(8, 10)
+  //   const orderedDate = `${day}/${month}/${year}`
+
+
+
+  //   return orderedDate
+  // }
+
+
   return (
     <div>
       <div>
