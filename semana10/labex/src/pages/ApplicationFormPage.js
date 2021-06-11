@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React from 'react';
 import { useHistory } from 'react-router';
-import { header } from '../constants/headers';
 import { BASE_URL } from '../constants/urls';
 import useForm from '../hooks/useForm';
 import useRequestData from '../hooks/useRequestData';

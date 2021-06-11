@@ -22,14 +22,35 @@ function TripDetails() {
         setTrip(res.data.trip)
       })
       .catch((err) => {
-        console.log(err.response.data)
+        alert(err.response.data.message)
       })
 
   }
 
+  const onClickApprove = (tripId, candidateId, approvalDecision) => {
+    const body = {
+      approve: approvalDecision
+    }
+
+    axios.put(`${BASE_URL}/trips/${tripId}/candidates/${candidateId}/decide`, body, header)
+      .then(() => {
+        if (approvalDecision === true) {
+          alert("Candidato aprovado :)")
+          getTripDetail(params.id)
+        } else {
+          alert("Candidato rejeitado :(")
+          getTripDetail(params.id)
+        }
+
+      })
+      .catch((err) => {
+        alert(err.response.data.message)
+      })
+  }
+
   useEffect(() => {
     getTripDetail(params.id)
-  }, [])
+  }, [params.id])
 
   return (
     <div>
@@ -48,6 +69,11 @@ function TripDetails() {
 
       <div>
         <h3>Candidatos aprovados</h3>
+        {trip.approved && trip.approved.map((candidate) => {
+          return <div key={candidate.id}>
+            <p>{candidate.name}</p>
+          </div>
+        })}
       </div>
 
       <div>
@@ -59,6 +85,10 @@ function TripDetails() {
             <p>{candidate.age}</p>
             <p>{candidate.country}</p>
             <p>{candidate.applicationText}</p>
+            <div>
+              <button onClick={() => onClickApprove(trip.id, candidate.id, false)}>Rejeitar</button>
+              <button onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</button>
+            </div>
           </div>
         })}
       </div>
