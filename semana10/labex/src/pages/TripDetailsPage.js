@@ -13,6 +13,10 @@ function TripDetails() {
   const history = useHistory()
   const [trip, setTrip] = useState({})
   const params = useParams()
+  const year = trip.date && trip.date.slice(0, 4)
+  const month = trip.date && trip.date.slice(5, 7)
+  const day = trip.date && trip.date.slice(8, 10)
+  const orderedDate = `${day}/${month}/${year}`
 
   useProtectedPage();
 
@@ -64,7 +68,7 @@ function TripDetails() {
         <p>{trip.description}</p>
         <p>{trip.planet}</p>
         <p>{trip.durationInDays}</p>
-        <p>{trip.date}</p>
+        <p>{orderedDate}</p>
       </div>
 
       <div>
