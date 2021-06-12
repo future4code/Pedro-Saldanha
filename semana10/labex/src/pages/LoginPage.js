@@ -80,6 +80,7 @@ const Button = styled.button`
 const MainContainer = styled.div`
     background-image: url(${starry});
     width:100vw;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
