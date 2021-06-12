@@ -113,6 +113,7 @@ function ListTrips() {
             <p>Planeta: {trip.planet}</p>
             <p>Duração: {trip.durationInDays} dias</p>
             <p>Data: {trip.date}</p>
+            <Button onClick={() => goToApplicationForm(history)}>Inscrição</Button>
           </TripCard>
         })
       ) : (
