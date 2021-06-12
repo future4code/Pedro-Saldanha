@@ -6,6 +6,7 @@ import Home from "../pages/HomePage";
 import ListTrips from "../pages/ListTripsPage";
 import Login from "../pages/LoginPage";
 import TripDetails from "../pages/TripDetailsPage";
+import ErrorPage from "../pages/ErrorPage";
 
 const Router = () => {
     return (
@@ -37,6 +38,10 @@ const Router = () => {
 
                 <Route exact path='/admin/trips/:id'>
                     <TripDetails />
+                </Route>
+
+                <Route>
+                    <ErrorPage />
                 </Route>
             </Switch>
         </BrowserRouter>

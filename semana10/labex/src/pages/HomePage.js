@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { goToAdminHome, goToListTrips } from '../routes/coordinator';
 import styled from 'styled-components';
+import starry from '../img/starry.jpg'
 
 const HomeContainer = styled.div`
     display:flex;
@@ -40,14 +41,19 @@ const Button = styled.button`
     border: 1px solid rgba(0, 0, 0, 0.22);
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 24px;
+    border-radius: 12px;
     text-align:center;
+    &:hover{
+        opacity: 0.7;
+        cursor: pointer;
+        transition: 0.3s;
+    }
 `
 
 const MainContainer = styled.div`
-    background-color: #E1DBDB;
+    background-image: url(${starry});
     width:100vw;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;

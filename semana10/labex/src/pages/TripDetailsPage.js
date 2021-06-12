@@ -6,7 +6,133 @@ import { BASE_URL } from '../constants/urls';
 import { header } from '../constants/headers'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import starry from '../img/starry.jpg'
 
+const MainContainer = styled.div`
+    background-image: url(${starry});
+    width:100vw;
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+`
+
+const Header = styled.div`
+  display:flex;
+  width:100vw;
+  justify-content:space-between;
+  align-items:center;
+  padding: 0 16px 0 16px;
+  box-sizing:border-box;
+  background-color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom:48px;
+    h1 {
+        font-weight: 200;
+        font-size: 48px;
+   
+        color: #595959; 
+      
+      }
+`
+
+const ButtonContainer = styled.div`
+    display:flex;
+    justify-content:space-around;
+`
+
+const Button = styled.button`
+    width: 98px;
+    height: 52px; 
+    font-size: 16px;
+    color: #595959;   
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align:center;
+    margin-right:16px;
+    &:hover{
+        opacity: 0.7;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+`
+const TripCard = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:16px;
+    padding-bottom:16px;
+    width:400px;
+    background-color:white;
+    border-radius:8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing:border-box;
+    margin-bottom:48px;
+    
+    h2 {
+        font-weight: 200;
+        color: #595959; 
+        font-size: 32px;
+        margin:0;
+        
+    }
+
+    h3 {
+      font-weight: 200;
+        color: #595959; 
+        font-size: 24px;
+        margin:0;
+    }
+
+    p {
+      font-weight: 200;
+        color: #595959; 
+    }
+  
+`
+
+const PendingCandidateContainer = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:16px;
+    padding-bottom:16px;
+    min-width:400px;
+    background-color:white;
+    border-radius:8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing:border-box;
+    margin-bottom:48px;
+    
+    h2 {
+        font-weight: 200;
+        color: #595959; 
+        font-size: 32px;
+        margin:0;
+        margin-bottom:16px;
+        
+    }
+
+    p {
+      font-weight: 200;
+        color: #595959; 
+    }
+  
+`
+
+const DetailsContainer = styled.div`
+  display:flex;
+  justify-content:space-around;
+  width:90%;
+`
 
 
 function TripDetails() {
@@ -57,47 +183,58 @@ function TripDetails() {
   }, [params.id])
 
   return (
-    <div>
-      <div>
+    <MainContainer>
+      <Header>
         <h1>{trip.name}</h1>
-        <button onClick={() => goBack(history)}>Voltar</button>
-      </div>
+        <Button onClick={() => goBack(history)}>Voltar</Button>
+      </Header>
+      {trip.candidates ? (
+        <DetailsContainer>
 
-      <div>
-        <h3>{trip.name}</h3>
-        <p>{trip.description}</p>
-        <p>{trip.planet}</p>
-        <p>{trip.durationInDays}</p>
-        <p>{orderedDate}</p>
-      </div>
+          <div>
 
-      <div>
-        <h3>Candidatos aprovados</h3>
-        {trip.approved && trip.approved.map((candidate) => {
-          return <div key={candidate.id}>
-            <p>{candidate.name}</p>
+            <TripCard>
+              <h2>{trip.name}</h2>
+              <p>{trip.description}</p>
+              <p>Planeta: {trip.planet}</p>
+              <p>Duração: {trip.durationInDays}</p>
+              <p>Data: {orderedDate}</p>
+            </TripCard>
+
+            <TripCard>
+              <h2>Candidatos aprovados</h2>
+              {trip.approved && trip.approved.map((candidate) => {
+                return <div key={candidate.id}>
+                  <p>{candidate.name}</p>
+                </div>
+              })}
+            </TripCard>
           </div>
-        })}
-      </div>
 
-      <div>
-        <h3>Candidatos Pendentes</h3>
-        {trip.candidates && trip.candidates.map((candidate) => {
-          return <div key={candidate.id}>
-            <h3>{candidate.name}</h3>
-            <p>{candidate.profession}</p>
-            <p>{candidate.age}</p>
-            <p>{candidate.country}</p>
-            <p>{candidate.applicationText}</p>
-            <div>
-              <button onClick={() => onClickApprove(trip.id, candidate.id, false)}>Rejeitar</button>
-              <button onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</button>
-            </div>
-          </div>
-        })}
-      </div>
 
-    </div>
+          <PendingCandidateContainer>
+            <h2>Candidatos Pendentes</h2>
+            {trip.candidates && trip.candidates.map((candidate) => {
+              return <TripCard key={candidate.id}>
+                <h3>{candidate.name}</h3>
+                <p>Profissão: {candidate.profession}</p>
+                <p>Idade: {candidate.age}</p>
+                <p>País: {candidate.country}</p>
+                <p>{candidate.applicationText}</p>
+                <ButtonContainer>
+                  <Button onClick={() => onClickApprove(trip.id, candidate.id, false)}>Rejeitar</Button>
+                  <Button onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</Button>
+                </ButtonContainer>
+              </TripCard>
+            })
+            }
+          </PendingCandidateContainer>
+        </DetailsContainer>
+      ) : (
+        <TripCard><p>Carregando...</p></TripCard>
+      )}
+
+    </MainContainer>
   );
 }
 
