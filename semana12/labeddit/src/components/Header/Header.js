@@ -9,7 +9,7 @@ import { goToFeed, goToLogin } from '../../routes/coordinator';
 const Header = () => {
     const history = useHistory()
     return (
-        <AppBar color="white" position="static">
+        <AppBar color="transparent" position="static">
             <StyledToolbar>
                 <Button color="primary" onClick={() => goToFeed(history)}>LabEddit</Button>
                 <Button onClick={() => goToLogin(history)} >Login</Button>

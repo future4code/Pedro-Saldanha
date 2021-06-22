@@ -27,8 +27,6 @@ const Router = () => {
                 <Route>
                     <ErrorPage />
                 </Route>
-
-
             </Switch>
         </BrowserRouter>
     )
