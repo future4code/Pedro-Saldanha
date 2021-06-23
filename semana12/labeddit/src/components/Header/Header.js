@@ -6,13 +6,29 @@ import { useHistory } from 'react-router';
 import { goToFeed, goToLogin } from '../../routes/coordinator';
 
 
-const Header = () => {
+const Header = ({rightButton, setRightButton}) => {
     const history = useHistory()
+    const token = localStorage.getItem("token")
+
+    const logout = () => {
+        localStorage.removeItem("token")
+    }
+
+    const rightButtonAction = () => {
+        if(token) {
+            logout()
+            setRightButton("Login")
+            goToLogin(history)
+        } else {
+            goToLogin(history)
+        }
+    }
+
     return (
         <AppBar color="transparent" position="static">
             <StyledToolbar>
                 <Button color="primary" onClick={() => goToFeed(history)}>LabEddit</Button>
-                <Button onClick={() => goToLogin(history)} >Login</Button>
+                <Button onClick={rightButtonAction} >{rightButton}</Button>
             </StyledToolbar>
         </AppBar>
     )
