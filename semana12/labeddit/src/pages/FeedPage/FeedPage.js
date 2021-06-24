@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { ScreenContainer } from "../../constants/styled";
 import PostCard from "./PostCard";
 import CreatePostCard from "./CreatePostCard";
 import { getPosts } from "../../services/post";
-import axios from "axios";
-import { BASE_URL } from "../../constants/urls";
 
-const FeedPage = () => {
+const FeedPage = ({posts, setPosts}) => {
     useProtectedPage()
-    const [posts, setPosts] = useState([])
+    
 
     useEffect(()=>{
         getPosts(setPosts)
-    }, [])
+    }, [setPosts])
 
     return (
         <ScreenContainer>

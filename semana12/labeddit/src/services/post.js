@@ -32,3 +32,15 @@ export const createPost = (body, cleanFields, setPosts) => {
     })
 }
 
+export const createComment = (body, cleanFields, getComments, id) => {
+    axios.post(`${BASE_URL}/posts/${id && id}/comments`, body, header)
+    .then((res)=>{
+        cleanFields()
+        getComments()
+    })
+    .catch((err)=>{
+        alert(err.response.data)
+    })
+}
+
+

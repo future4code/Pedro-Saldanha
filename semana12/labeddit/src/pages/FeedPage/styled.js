@@ -11,6 +11,8 @@ export const StyledButton = styled(Button)`
 export const PostsCard = styled(Card)`
     display: flex;
     flex-direction: column;
+    flex-wrap:wrap;
+    word-break: break-word;
     width:80vw;
     padding: 1vw;
     max-width:500px;

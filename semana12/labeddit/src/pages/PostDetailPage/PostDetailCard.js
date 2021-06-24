@@ -8,30 +8,32 @@ import ShareIcon from '@material-ui/icons/Share';
 import CommentIcon from '@material-ui/icons/Comment';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-import { PostsCard } from './styled';
-import { goToPostDetail } from '../../routes/coordinator';
-import { useHistory } from 'react-router-dom';
+import { PostDetailsCard } from './styled';
 
 
-export default function PostCard({ posts }) {
-    const history = useHistory()
-  
-    const goToDetail = (id) => {
-        goToPostDetail(history, id)
-    }
+
+export default function PostDetailCard({ posts, params }) {
+
+    const post = posts.length && posts.filter((post) => {
+        if (post.id === params.id) {
+            return true
+        } else {
+            return false
+        }
+    })
 
     return (
         <>
-            {posts.length ? (
-                <>{posts.map((post) => {
-                    return <PostsCard key={post.id} onClick={() => goToDetail(post.id)}>
+            {post ? (
+                <>
+                    <PostDetailsCard key={post[0].id}>
                         <CardHeader
-                            title={post.title}
-                            subheader={post.username}
+                            title={post[0].title}
+                            subheader={post[0].username}
                         />
                         <CardContent>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {post.body}
+                                {post[0].body}
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
@@ -39,7 +41,7 @@ export default function PostCard({ posts }) {
                                 <ThumbUpIcon />
                             </IconButton>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {post.voteSum}
+                                {post[0].voteSum}
                             </Typography>
                             <IconButton aria-label="dislike" color="primary">
                                 <ThumbDownIcon />
@@ -48,24 +50,28 @@ export default function PostCard({ posts }) {
                                 <ShareIcon />
                             </IconButton>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                {post.commentCount}
+                                {post[0].commentCount}
                             </Typography>
                             <IconButton aria-label="comment" color="secondary">
                                 <CommentIcon />
                             </IconButton>
-                           
+
 
                         </CardActions>
 
-                    </PostsCard>
-                })}</>
+                    </PostDetailsCard>
+                </>
             ) : (
-                <PostsCard>
+                <PostDetailsCard>
                     <Typography variant="body2" color="textSecondary" component="p">
                         Carregando...
                     </Typography>
-                </PostsCard>
+                </PostDetailsCard>
             )}
+
+
+
+
 
         </>
     );

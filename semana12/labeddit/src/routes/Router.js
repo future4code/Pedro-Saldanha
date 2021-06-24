@@ -6,13 +6,13 @@ import PostDetailPage from "../pages/PostDetailPage/PostDetailPage";
 import SignUpPage from "../pages/SingUpPage/SignUpPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
-const Router = ({setRightButton}) => {
+const Router = ({setRightButton, posts, setPosts}) => {
     return (
 
 
         <Switch>
             <Route exact path="/">
-                <FeedPage />
+                <FeedPage posts={posts} setPosts={setPosts} />
             </Route>
             <Route exact path="/login">
                 <LoginPage setRightButton={setRightButton} />
@@ -21,7 +21,7 @@ const Router = ({setRightButton}) => {
                 <SignUpPage setRightButton={setRightButton} />
             </Route>
             <Route exact path="/detalhe/:id">
-                <PostDetailPage />
+                <PostDetailPage posts={posts} setPosts={setPosts}/>
             </Route>
             <Route>
                 <ErrorPage />
