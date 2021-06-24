@@ -1,17 +1,25 @@
-import React from "react";
-import Button from '@material-ui/core/Button';
+import React, { useEffect, useState } from "react";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
+import { ScreenContainer } from "../../constants/styled";
+import PostCard from "./PostCard";
+import CreatePostCard from "./CreatePostCard";
+import { getPosts } from "../../services/post";
+import axios from "axios";
+import { BASE_URL } from "../../constants/urls";
 
 const FeedPage = () => {
     useProtectedPage()
-    
+    const [posts, setPosts] = useState([])
+
+    useEffect(()=>{
+        getPosts(setPosts)
+    }, [])
+
     return (
-        <div>
-            <h1>FeedPage</h1>
-            <Button variant="outlined" color="primary">
-                Primary
-            </Button>
-        </div>
+        <ScreenContainer>
+            <CreatePostCard posts={posts} setPosts={setPosts} />
+            <PostCard posts={posts} />
+        </ScreenContainer>
     )
 }
 
