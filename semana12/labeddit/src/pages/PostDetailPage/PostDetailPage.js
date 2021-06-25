@@ -33,7 +33,7 @@ const PostDetailPage = ({ posts, setPosts }) => {
                 setComments(res.data)
             })
             .catch((err) => {
-                console.log(err.response.data)
+                alert(err.response.data)
             })
     }
 
@@ -43,9 +43,9 @@ const PostDetailPage = ({ posts, setPosts }) => {
 
     return (
         <ScreenContainer>
-            <PostDetailCard posts={posts} params={params} />
+            <PostDetailCard posts={posts} params={params} setPosts={setPosts} />
             <CreateComment comments={comments} setComments={setComments} getComments={getComments} id={params.id} />
-            <PostCommentsCard comments={comments} />
+            <PostCommentsCard comments={comments} getComments={getComments} id={params.id} />
 
         </ScreenContainer>
     )

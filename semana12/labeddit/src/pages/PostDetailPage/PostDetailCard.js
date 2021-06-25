@@ -4,15 +4,15 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import ShareIcon from '@material-ui/icons/Share';
 import CommentIcon from '@material-ui/icons/Comment';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import { PostDetailsCard } from './styled';
+import { downvotePost, upvotePost } from '../../services/post';
 
 
 
-export default function PostDetailCard({ posts, params }) {
+export default function PostDetailCard({ posts, params, setPosts }) {
 
     const post = posts.length && posts.filter((post) => {
         if (post.id === params.id) {
@@ -37,24 +37,21 @@ export default function PostDetailCard({ posts, params }) {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
-                            <IconButton aria-label="like" color="primary">
+                            <IconButton aria-label="like" color="primary" onClick={() => upvotePost(post[0].id, post[0].userVote, setPosts)}>
                                 <ThumbUpIcon />
                             </IconButton>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {post[0].voteSum}
                             </Typography>
-                            <IconButton aria-label="dislike" color="primary">
+                            <IconButton aria-label="dislike" color="primary" onClick={() => downvotePost(post[0].id, post[0].userVote, setPosts)}>
                                 <ThumbDownIcon />
                             </IconButton>
-                            <IconButton aria-label="share" color="secondary">
-                                <ShareIcon />
+                            <IconButton aria-label="comment" color="secondary">
+                                <CommentIcon />
                             </IconButton>
                             <Typography variant="body2" color="textSecondary" component="p">
                                 {post[0].commentCount}
                             </Typography>
-                            <IconButton aria-label="comment" color="secondary">
-                                <CommentIcon />
-                            </IconButton>
 
 
                         </CardActions>

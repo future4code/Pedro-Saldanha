@@ -5,18 +5,18 @@ import PostCard from "./PostCard";
 import CreatePostCard from "./CreatePostCard";
 import { getPosts } from "../../services/post";
 
-const FeedPage = ({posts, setPosts}) => {
+const FeedPage = ({ posts, setPosts }) => {
     useProtectedPage()
-    
 
-    useEffect(()=>{
+
+    useEffect(() => {
         getPosts(setPosts)
     }, [setPosts])
 
     return (
         <ScreenContainer>
             <CreatePostCard posts={posts} setPosts={setPosts} />
-            <PostCard posts={posts} />
+            <PostCard posts={posts} setPosts={setPosts} />
         </ScreenContainer>
     )
 }

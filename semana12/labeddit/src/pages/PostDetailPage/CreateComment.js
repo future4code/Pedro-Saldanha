@@ -6,13 +6,13 @@ import { createComment } from '../../services/post';
 
 
 
-export default function CreateComment({ comments, setComments, getComments, id }) {
+export default function CreateComment({ setComments, id }) {
     const { form, onChange, cleanFields } = useForm({ body: "" })
 
     const onSubmitForm = (event) => {
         event.preventDefault()
 
-        createComment(form, cleanFields, getComments, id)
+        createComment(form, cleanFields, id, setComments)
 
     }
 

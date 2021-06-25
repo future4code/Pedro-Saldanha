@@ -14,7 +14,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header rightButton={rightButton} setRightButton={setRightButton} />
-        <Router setRightButton={setRightButton} posts={posts} setPosts={setPosts}/>
+        <Router setRightButton={setRightButton} posts={posts} setPosts={setPosts} />
       </BrowserRouter>
     </ThemeProvider>
   )
