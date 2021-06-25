@@ -11,10 +11,10 @@ const Router = ({ setRightButton, posts, setPosts }) => {
 
 
         <Switch>
-            <Route exact path="/">
+            <Route exact path="/feed">
                 <FeedPage posts={posts} setPosts={setPosts} />
             </Route>
-            <Route exact path="/login">
+            <Route exact path="/">
                 <LoginPage setRightButton={setRightButton} />
             </Route>
             <Route exact path="/cadastro">

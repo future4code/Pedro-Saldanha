@@ -15,7 +15,7 @@ export const getPosts = (setPosts) => {
 
         })
         .catch((err) => {
-            alert(err.response)
+            alert(err.response.data)
         })
 }
 
@@ -28,7 +28,7 @@ export const createPost = (body, cleanFields, setPosts) => {
 
         })
         .catch((err) => {
-            alert(err.response.data)
+            alert(err.response.data.message)
         })
 }
 
@@ -38,7 +38,7 @@ export const getComments = (id, setComments) => {
             setComments(res.data)
         })
         .catch((err) => {
-            alert(err.response)
+            alert(err.response.data.message)
         })
 }
 
@@ -49,7 +49,7 @@ export const createComment = (body, cleanFields, id, setComments) => {
             getComments(id, setComments)
         })
         .catch((err) => {
-            alert(err.response.data)
+            alert(err.response.data.message)
         })
 }
 
