@@ -2,14 +2,18 @@ import axios from "axios";
 import { BASE_URL } from "../constants/urls";
 
 
-const header = {
-    headers: {
-        Authorization: localStorage.getItem("token")
+const generateHeader = () => {
+    const header = {
+        headers: {
+            Authorization: localStorage.getItem("token")
+        }
     }
+    return header
 }
 
+
 export const getPosts = (setPosts) => {
-    axios.get(`${BASE_URL}/posts`, header)
+    axios.get(`${BASE_URL}/posts`, generateHeader())
         .then((res) => {
             setPosts(res.data)
 
@@ -20,7 +24,7 @@ export const getPosts = (setPosts) => {
 }
 
 export const createPost = (body, cleanFields, setPosts) => {
-    axios.post(`${BASE_URL}/posts`, body, header)
+    axios.post(`${BASE_URL}/posts`, body, generateHeader())
         .then((res) => {
             alert(res.data)
             cleanFields()
@@ -33,7 +37,7 @@ export const createPost = (body, cleanFields, setPosts) => {
 }
 
 export const getComments = (id, setComments) => {
-    axios.get(`${BASE_URL}/posts/${id}/comments`, header)
+    axios.get(`${BASE_URL}/posts/${id}/comments`, generateHeader())
         .then((res) => {
             setComments(res.data)
         })
@@ -43,7 +47,7 @@ export const getComments = (id, setComments) => {
 }
 
 export const createComment = (body, cleanFields, id, setComments) => {
-    axios.post(`${BASE_URL}/posts/${id}/comments`, body, header)
+    axios.post(`${BASE_URL}/posts/${id}/comments`, body, generateHeader())
         .then(() => {
             cleanFields()
             getComments(id, setComments)
@@ -58,7 +62,7 @@ export const createComment = (body, cleanFields, id, setComments) => {
 export const upvotePost = (id, userVote, setPosts) => {
     if (userVote === null) {
 
-        axios.post(`${BASE_URL}/posts/${id}/votes`, { direction: 1 }, header)
+        axios.post(`${BASE_URL}/posts/${id}/votes`, { direction: 1 }, generateHeader())
             .then(() => {
                 getPosts(setPosts)
             })
@@ -66,7 +70,7 @@ export const upvotePost = (id, userVote, setPosts) => {
                 alert(err.response.data.message)
             })
     } else if (userVote === 1 || userVote === -1) {
-        axios.delete(`${BASE_URL}/posts/${id}/votes`, header)
+        axios.delete(`${BASE_URL}/posts/${id}/votes`, generateHeader())
             .then(() => {
                 getPosts(setPosts)
             })
@@ -80,7 +84,7 @@ export const upvotePost = (id, userVote, setPosts) => {
 export const downvotePost = (id, userVote, setPosts) => {
     if (userVote === null) {
 
-        axios.put(`${BASE_URL}/posts/${id}/votes`, { direction: -1 }, header)
+        axios.put(`${BASE_URL}/posts/${id}/votes`, { direction: -1 }, generateHeader())
             .then(() => {
                 getPosts(setPosts)
             })
@@ -88,7 +92,7 @@ export const downvotePost = (id, userVote, setPosts) => {
                 alert(err.response.data.message)
             })
     } else if (userVote === -1 || userVote === 1) {
-        axios.delete(`${BASE_URL}/posts/${id}/votes`, header)
+        axios.delete(`${BASE_URL}/posts/${id}/votes`, generateHeader())
             .then(() => {
                 getPosts(setPosts)
             })
@@ -103,7 +107,7 @@ export const downvotePost = (id, userVote, setPosts) => {
 export const upvoteComment = (commentId, userVote, comments) => {
     if (userVote === null) {
 
-        axios.post(`${BASE_URL}/comments/${commentId}/votes`, { direction: 1 }, header)
+        axios.post(`${BASE_URL}/comments/${commentId}/votes`, { direction: 1 }, generateHeader())
             .then(() => {
                 comments()
             })
@@ -111,7 +115,7 @@ export const upvoteComment = (commentId, userVote, comments) => {
                 alert(err.response.data.message)
             })
     } else if (userVote === 1 || userVote === -1) {
-        axios.delete(`${BASE_URL}/comments/${commentId}/votes`, header)
+        axios.delete(`${BASE_URL}/comments/${commentId}/votes`, generateHeader())
             .then(() => {
                 comments()
             })
@@ -125,7 +129,7 @@ export const upvoteComment = (commentId, userVote, comments) => {
 export const downvoteComment = (commentId, userVote, comments) => {
     if (userVote === null) {
 
-        axios.put(`${BASE_URL}/comments/${commentId}/votes`, { direction: -1 }, header)
+        axios.put(`${BASE_URL}/comments/${commentId}/votes`, { direction: -1 }, generateHeader())
             .then(() => {
                 comments()
             })
@@ -133,7 +137,7 @@ export const downvoteComment = (commentId, userVote, comments) => {
                 alert(err.response.data.message)
             })
     } else if (userVote === -1 || userVote === 1) {
-        axios.delete(`${BASE_URL}/comments/${commentId}/votes`, header)
+        axios.delete(`${BASE_URL}/comments/${commentId}/votes`, generateHeader())
             .then(() => {
                 comments()
             })
