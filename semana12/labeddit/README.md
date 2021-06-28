@@ -12,6 +12,9 @@ Realizado por:
 
 
 Link do Surge: https://peu-paiva-labeddit.surge.sh/
+Cadastro para teste:
+pikachijo@gmail.com
+12345678
 
 
 O que funciona:
