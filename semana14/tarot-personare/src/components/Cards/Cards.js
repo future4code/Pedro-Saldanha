@@ -66,8 +66,6 @@ function Cards() {
                 <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton>
                 ) }
                 
-                {/* <StyledButton onClick={restartCards}>Recomeçar</StyledButton>
-                <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton> */}
             </ButtonContainer>
 
             <CardsContainer>
