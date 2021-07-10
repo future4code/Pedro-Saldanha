@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BACK_CARD_URL, BASE_URL } from "../../constants/url";
 import { getCards } from "../../services/cards";
 import PopupCard from "../PopupCard/PopupCard";
-import { ButtonContainer, CardsContainer, StyledButton } from "./styled";
+import { ButtonContainer, CardsContainer, StyledButton, StyledImg } from "./styled";
 
 
 function Cards() {
@@ -46,9 +46,9 @@ function Cards() {
 
     const cardsMap = cards.length > 0 && cards.map((card) => {
         return (card.flipCard ?
-            <img src={`${BASE_URL}/${card.image}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />
+            <StyledImg src={`${BASE_URL}/${card.image}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />
             :
-            <img src={`${BACK_CARD_URL}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />)
+            <StyledImg src={`${BACK_CARD_URL}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />)
     })
 
     return (

@@ -34,3 +34,8 @@ export const StyledButton = styled.button`
     margin-right: 16px;
   
 `
+
+export const StyledImg = styled.img`
+    width: 162px;
+    height: 341px;
+`
