@@ -9,6 +9,7 @@ function Cards() {
     const [cards, setCards] = useState({})
     const [trigger, setTrigger] = useState(false)
     const [selectedCard, setSelectedCard] = useState({})
+    const [shuffled, setShuffled] =  useState(false)
 
     useEffect(() => {
         getCards(cards, setCards)
@@ -17,6 +18,7 @@ function Cards() {
     let copyArray = cards.length > 0 && [...cards]
 
     const shuffleCards = (array) => {
+        setShuffled(true)
         let newPosition
         let temp
 
@@ -41,6 +43,7 @@ function Cards() {
     }
 
     const restartCards = () => {
+        setShuffled(false)
         getCards(cards, setCards)
     }
 
@@ -54,8 +57,17 @@ function Cards() {
     return (
         <div>
             <ButtonContainer>
+                {shuffled ? (
+                <>
                 <StyledButton onClick={restartCards}>Recomeçar</StyledButton>
                 <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton>
+                </>
+                ) : (
+                <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton>
+                ) }
+                
+                {/* <StyledButton onClick={restartCards}>Recomeçar</StyledButton>
+                <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton> */}
             </ButtonContainer>
 
             <CardsContainer>
