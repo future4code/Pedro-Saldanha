@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { BACK_CARD_URL, BASE_URL } from "../../constants/url";
 import { getCards } from "../../services/cards";
-import { CardsContainer } from "./styled";
+import PopupCard from "../PopupCard/PopupCard";
+import { ButtonContainer, CardsContainer, StyledButton } from "./styled";
 
 
 function Cards() {
     const [cards, setCards] = useState({})
     const [flipped, setFlipped] = useState(true)
+    const [trigger, setTrigger] = useState(false)
+    const [selectedCard, setSelectedCard] = useState({})
 
     useEffect(() => {
         getCards(cards, setCards)
@@ -24,26 +27,34 @@ function Cards() {
             temp = array[i]
             array[i] = array[newPosition]
             array[newPosition] = temp
-            console.log(array)
         }
         setCards(array)
 
+    }
+
+    const popupCard = (card) => {
+        setTrigger(true)
+        setFlipped(true)
+        setSelectedCard(card)
     }
 
 
 
     const cardsMap = cards.length > 0 && cards.map((card) => {
         return (flipped ?
-            <img src={`${BASE_URL}/${card.image}`} alt={card.name} key={card.name} />
+            <img src={`${BASE_URL}/${card.image}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />
             :
-            <img src={`${BACK_CARD_URL}`} alt={card.name} key={card.name} onClick={()=>setFlipped(true)}/>)
+            <img src={`${BACK_CARD_URL}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />)
     })
 
     return (
         <div>
-            <button onClick={() => shuffleCards(copyArray)}>Shuffle</button>
+            <ButtonContainer>
+                <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton>
+            </ButtonContainer>
             <CardsContainer>
                 {cardsMap}
+                <PopupCard trigger={trigger} setTrigger={setTrigger} card={selectedCard && selectedCard} />
             </CardsContainer>
         </div>
     );
