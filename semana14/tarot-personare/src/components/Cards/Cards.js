@@ -7,21 +7,23 @@ import { ButtonContainer, CardsContainer, StyledButton } from "./styled";
 
 function Cards() {
     const [cards, setCards] = useState({})
-    const [flipped, setFlipped] = useState(true)
     const [trigger, setTrigger] = useState(false)
     const [selectedCard, setSelectedCard] = useState({})
 
     useEffect(() => {
         getCards(cards, setCards)
-
     }, [])
 
     let copyArray = cards.length > 0 && [...cards]
 
     const shuffleCards = (array) => {
-        setFlipped(false)
         let newPosition
         let temp
+
+        for (let card of array) {
+            card.flipCard = false
+        }
+
         for (let i = array.length - 1; i > 0; i--) {
             newPosition = Math.floor(Math.random() * i);
             temp = array[i]
@@ -34,14 +36,16 @@ function Cards() {
 
     const popupCard = (card) => {
         setTrigger(true)
-        setFlipped(true)
+        card.flipCard = true
         setSelectedCard(card)
     }
 
-
+    const restartCards = () => {
+        getCards(cards, setCards)
+    }
 
     const cardsMap = cards.length > 0 && cards.map((card) => {
-        return (flipped ?
+        return (card.flipCard ?
             <img src={`${BASE_URL}/${card.image}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />
             :
             <img src={`${BACK_CARD_URL}`} alt={card.name} key={card.name} onClick={() => popupCard(card)} />)
@@ -50,8 +54,10 @@ function Cards() {
     return (
         <div>
             <ButtonContainer>
+                <StyledButton onClick={restartCards}>Recomeçar</StyledButton>
                 <StyledButton onClick={() => shuffleCards(copyArray)}>Embaralhar</StyledButton>
             </ButtonContainer>
+
             <CardsContainer>
                 {cardsMap}
                 <PopupCard trigger={trigger} setTrigger={setTrigger} card={selectedCard && selectedCard} />

@@ -12,21 +12,25 @@ export const CardsContainer = styled.div`
 
 export const ButtonContainer = styled.div`
     display:flex;
-    width:70vw;
     justify-content: center;
-    margin-top: 16px;
+    width:70vw;
+    margin: 16px 0 0 0 ;
+    flex-wrap:wrap;
 `
 
-export const StyledButton =  styled.button`
-  background-color: #d83e13;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  border-radius: 8px;
-  font-family: 'Cinzel Decorative', cursive;
+export const StyledButton = styled.button`
+    background-color: #d83e13;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 8px;
+    font-family: 'Cinzel Decorative', cursive;
+    box-sizing: border-box;
+    flex-wrap:wrap;
+    margin-top: 16px;
+    margin-right: 16px;
   
 `

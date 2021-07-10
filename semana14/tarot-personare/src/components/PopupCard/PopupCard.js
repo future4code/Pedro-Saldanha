@@ -9,7 +9,7 @@ function PopupCard({ trigger, setTrigger, card }) {
     return trigger ? (
         <PopupCardContainer onClick={() => setTrigger(false)}>
             <DetailsContainer>
-                <img src={`${BASE_URL}/${card.image}`} />
+                <img src={`${BASE_URL}/${card.image}`} alt={card.name} />
                 <PopupTexts>
                     <h3>{card.name}</h3>
                     <p>
