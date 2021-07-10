@@ -9,7 +9,7 @@
 
  ## Sobre
 ### Tarot -  Indagação, investigação e respostas!
-Projeto de jogo de Tarot.
+Projeto de jogo de Tarot. Desenvolvido em React.js
 
 ## Libs Utilizadas
 - axios
