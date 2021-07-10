@@ -9,7 +9,7 @@
 
  ## Sobre
 ### Tarot -  Indagação, investigação e respostas!
-Projeto criando um jogo de Tarot. Desenvolvido ao longo do curso na Labenu utilizando React.js
+Projeto de jogo de Tarot.
 
 ## Libs Utilizadas
 - axios
