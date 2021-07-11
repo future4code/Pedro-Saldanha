@@ -1,0 +1,396 @@
+{
+  "imagesUrl": "https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/",
+  "imageBackCard": "https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png",
+  "cards": [
+    {
+      "name": "O MAGO",
+      "image": "arcano1.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A SACERDOTISA",
+      "image": "arcano2.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A IMPERATRIZ",
+      "image": "arcano3.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O IMPERADOR",
+      "image": "arcano4.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O PAPA",
+      "image": "arcano5.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "OS ENAMORADOS",
+      "image": "arcano6.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O CARRO",
+      "image": "arcano7.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A JUSTIÇA",
+      "image": "arcano8.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O EREMITA",
+      "image": "arcano9.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A RODA DA FORTUNA",
+      "image": "arcano10.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A FORÇA",
+      "image": "arcano11.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O HOMEM PENDURADO",
+      "image": "arcano12.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A MORTE",
+      "image": "arcano13.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A TEMPERANÇA",
+      "image": "arcano14.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O DIABO",
+      "image": "arcano15.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A TORRE",
+      "image": "arcano16.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A ESTRELA",
+      "image": "arcano17.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "A LUA",
+      "image": "arcano18.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O SOL",
+      "image": "arcano19.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O JULGAMENTO",
+      "image": "arcano20.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O MUNDO",
+      "image": "arcano21.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "O LOUCO",
+      "image": "arcano22.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "ÀS DE COPAS",
+      "image": "arcano23.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "2 DE COPAS",
+      "image": "arcano24.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "3 DE COPAS",
+      "image": "arcano25.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "4 DE COPAS",
+      "image": "arcano26.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "5 DE COPAS",
+      "image": "arcano27.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "6 DE COPAS",
+      "image": "arcano28.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "7 DE COPAS",
+      "image": "arcano29.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "8 DE COPAS",
+      "image": "arcano30.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "9 DE COPAS",
+      "image": "arcano31.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "10 DE COPAS",
+      "image": "arcano32.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "PRINCESA DE COPAS",
+      "image": "arcano33.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "CAVALEIRO DE COPAS",
+      "image": "arcano34.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "RAINHA DE COPAS",
+      "image": "arcano35.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "REI DE COPAS",
+      "image": "arcano36.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "ÀS DE ESPADAS",
+      "image": "arcano37.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "2 DE ESPADAS ,",
+      "image": "arcano38.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "3 DE ESPADAS",
+      "image": "arcano39.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "4 DE ESPADAS",
+      "image": "arcano40.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "5 DE ESPADAS",
+      "image": "arcano41.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "6 DE ESPADAS",
+      "image": "arcano42.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "7 DE ESPADAS",
+      "image": "arcano43.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "8 DE ESPADAS",
+      "image": "arcano44.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "9 DE ESPADAS",
+      "image": "arcano45.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "10 DE ESPADAS",
+      "image": "arcano46.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "PRINCESA DE ESPADAS",
+      "image": "arcano47.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "CAVALEIRO DE ESPADAS",
+      "image": "arcano48.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "RAINHA DE ESPADAS",
+      "image": "arcano49.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "REI DE ESPADAS",
+      "image": "arcano50.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "ÀS DE PAUS",
+      "image": "arcano51.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "2 DE PAUS",
+      "image": "arcano52.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "3 DE PAUS",
+      "image": "arcano53.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "4 DE PAUS",
+      "image": "arcano54.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "5 DE PAUS",
+      "image": "arcano55.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "6 DE PAUS",
+      "image": "arcano56.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "7 DE PAUS",
+      "image": "arcano57.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "8 DE PAUS",
+      "image": "arcano58.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "9 DE PAUS",
+      "image": "arcano59.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "10 DE PAUS",
+      "image": "arcano60.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "PRINCESA DE PAUS",
+      "image": "arcano61.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "CAVALEIRO DE PAUS",
+      "image": "arcano62.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "RAINHA DE PAUS",
+      "image": "arcano63.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "REI DE PAUS",
+      "image": "arcano64.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "ÀS DE OUROS",
+      "image": "arcano65.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "2 DE OUROS",
+      "image": "arcano66.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "3 DE OUROS",
+      "image": "arcano67.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "4 DE OUROS",
+      "image": "arcano68.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "5 DE OUROS",
+      "image": "arcano69.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "6 DE OUROS",
+      "image": "arcano70.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "7 DE OUROS",
+      "image": "arcano71.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "8 DE OUROS",
+      "image": "arcano72.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "9 DE OUROS",
+      "image": "arcano73.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "10 DE OUROS",
+      "image": "arcano74.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "PRINCESA DE OUROS",
+      "image": "arcano75.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "CAVALEIRO DE OUROS",
+      "image": "arcano76.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "RAINHA DE OUROS",
+      "image": "arcano77.jpg",
+      "flipCard": true
+    },
+    {
+      "name": "REI DE OUROS",
+      "image": "arcano78.jpg",
+      "flipCard": true
+    }
+  ]
+}
