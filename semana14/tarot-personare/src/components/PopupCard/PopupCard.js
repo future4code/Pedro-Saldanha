@@ -12,9 +12,7 @@ function PopupCard({ trigger, setTrigger, card }) {
                 <img src={`${BASE_URL}/${card.image}`} alt={card.name} />
                 <PopupTexts>
                     <h3>{card.name}</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non tempus est. In sed fermentum arcu, sed maximus quam. Morbi aliquet lacus nunc, mattis auctor urna hendrerit non. Quisque commodo nisl urna, vel mattis elit venenatis a. Duis cursus sollicitudin vulputate.
-                    </p>
+                    <p>{card.description}</p>
                 </PopupTexts>
             </DetailsContainer>
         </PopupCardContainer>
