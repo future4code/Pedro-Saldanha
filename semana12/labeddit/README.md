@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# <h1 align='center'> Tarot</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p align="center">
+  <img src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png" alt="backTarotCard">
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ ## Sobre
+### Tarot -  Indagação, investigação e respostas!
+Projeto de jogo de Tarot. Desenvolvido em React.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Libs Utilizadas
+- axios
+- styled-components
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Link do Surge
+<a href="https://peu-tarot.surge.sh/">peu-tarot.surge.sh</a>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## O que funciona
+- Tela Inicial
+  - Mostra o baralho completo de Tarot com as cartas abertas e ordenadas
+  - Botão de embaralhar vira as cartas e as posiciona aleatoriamente
+  - Ao selecione a carta para desvirá-la e ver detalhes da mesma
+  - Botão Recomeçar retorna ao estado inicial
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Imagens
+![image](https://user-images.githubusercontent.com/20777850/125178720-c4196800-e1bd-11eb-8899-861a36335660.png)
+![image](https://user-images.githubusercontent.com/20777850/125178727-d8f5fb80-e1bd-11eb-936b-da46cec4eca3.png)
+![image](https://user-images.githubusercontent.com/20777850/125178732-e7441780-e1bd-11eb-8c1f-13fd23fee34a.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Autor
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/peustef">
+    <img src="https://avatars.githubusercontent.com/u/20777850?v=4" width="100px" alt="Imagem do perfil de Pedro Stefani Saldanha"/>
+    <br />
+    <sub><b>Pedro Stefani Saldanha</b></sub>
+     
+</table>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
