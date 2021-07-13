@@ -1,8 +1,17 @@
+type stats = {
+    maior: number,
+    menor: number,
+    media: number
+}
+ type amostra = {
+     numeros: number[],
+     obterEstatisticas: (numeros: number[]) => stats
+ }
 
-function obterEstatisticas(numeros: number[]) {
+function obterEstatisticas(numeros:number[]): stats {
 
     const numerosOrdenados = numeros.sort(
-        (a:number, b:number) => a - b
+        (a, b) => a - b
     )
 
     let soma = 0
@@ -11,7 +20,7 @@ function obterEstatisticas(numeros: number[]) {
         soma += num
     }
 
-    const estatisticas = {
+    const estatisticas:stats = {
         maior: numerosOrdenados[numeros.length - 1],
         menor: numerosOrdenados[0],
         media: soma / numeros.length
@@ -19,3 +28,10 @@ function obterEstatisticas(numeros: number[]) {
 
     return estatisticas
 }
+
+const objeto1: amostra = {
+    numeros: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    obterEstatisticas: obterEstatisticas
+}
+
+console.log(objeto1.obterEstatisticas(objeto1.numeros))
