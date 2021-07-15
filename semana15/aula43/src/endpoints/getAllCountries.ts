@@ -1,14 +1,6 @@
 import { Request, Response } from "express"
-import { countries } from "../data"
-
-const basicInfoCountries = countries.map((country) => {
-    return {
-        id: country.id,
-        name: country.name
-    }
-})
-
+import { basicInfoCountries } from "../constants/basicInfo"
 
 export const getAllCountries = (request: Request, response: Response) => {
-    response.send(basicInfoCountries)
+    response.status(200).send(basicInfoCountries)
 }

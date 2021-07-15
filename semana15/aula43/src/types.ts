@@ -12,3 +12,8 @@ export type country = {
     capital: string,
     continent: CONTINENTS
 }
+
+export type countryBasicInfo = {
+    id: number,
+    name: string
+}
