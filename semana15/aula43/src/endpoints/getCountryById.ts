@@ -1,19 +1,17 @@
 import { Request, Response } from "express"
-import { basicInfoCountries } from "../constants/basicInfo"
-import { countryBasicInfo } from "../types"
+import { countries } from "../data"
+import { country } from "../types"
 
 
 export const getCountryById = (request: Request, response: Response): void => {
 
-    const result: countryBasicInfo | undefined = basicInfoCountries.find((country) => {
+    const result: country | undefined = countries.find((country) => {
         return country.id === Number(request.params.id)
     })
 
     if (result) {
-        response.status(200).send(result || "País não encontrado")
+        response.status(200).send(result)
     } else {
-        response.status(404).end()
+        response.status(404).send("País não encontrado")
     }
-
-
 }
