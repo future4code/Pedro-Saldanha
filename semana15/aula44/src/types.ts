@@ -5,3 +5,8 @@ export type User = {
     type: string,
     age: number
   }
+
+export enum UserType {
+    ADMIN = "ADMIN",
+    NORMAL = "NORMAL"
+}
