@@ -4,9 +4,9 @@ import { UserAccount } from "../types/UserAccount"
 
 
 export const createUsers = (req: Request, res: Response) => {
-    const { name, cpf, birthdate, balance, statement } = req.body
+    const { name, cpf, birthdate } = req.body
 
-    if (!name || !cpf || !birthdate || balance !== 0 || !statement) {
+    if (!name || !cpf || !birthdate) {
         res.status(422).send("Cheque os campos")
     }
 
@@ -14,8 +14,8 @@ export const createUsers = (req: Request, res: Response) => {
         name,
         cpf,
         birthdate,
-        balance,
-        statement
+        balance: 0,
+        statement: []
     }
     
     if (Number(birthdate.slice(6, 10)) > 2003) {
