@@ -17,6 +17,7 @@ const App = () => {
         <Router setRightButton={setRightButton} posts={posts} setPosts={setPosts} />
       </BrowserRouter>
     </ThemeProvider>
+
   )
 }
 
