@@ -93,11 +93,11 @@ SELECT salary from Actor WHERE name = "Tony Ramos";
 ```
 SELECT * from Actor WHERE gender = "invalid";
 ```
-*d)
+* d)
 ```
 SELECT id, name, salary from Actor WHERE salary <= 500000;
 ```
-*e) Error Code: 1054. Unknown column 'nome' in 'field list'. Não existe uma coluna com o nome "nome" e sim name. o correto seria: 
+* e) Error Code: 1054. Unknown column 'nome' in 'field list'. Não existe uma coluna com o nome "nome" e sim name. o correto seria: 
 ```
 SELECT id, name from Actor WHERE id = "002";
 ```
@@ -152,7 +152,7 @@ VALUES(
     10
 );
 ```
-*d)
+* d)
 ```
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES(
@@ -163,7 +163,7 @@ VALUES(
     8
 );
 ```
-*e)
+* e)
 ```
 INSERT INTO Movie (id, title, synopsis, release_date, rating)
 VALUES(
@@ -206,4 +206,3 @@ SELECT * from Movie WHERE release_date < "2021-07-19";
 ```
 SELECT * from Movie WHERE release_date < "2021-07-19" AND (title LIKE "%seu%" OR synopsis LIKE "%seu%") AND rating > 7;
 ```
-
