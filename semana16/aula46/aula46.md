@@ -78,12 +78,12 @@ ORDER BY name DESC;
 SELECT * from Actor
 ORDER BY salary;
 ```
-*d)
+* d)
 ```
 SELECT * from Actor
 ORDER BY salary DESC LIMIT 3;
 ```
-*e)
+* e)
 ```
 SELECT AVG(salary), gender from Actor
 GROUP BY gender;
