@@ -84,7 +84,7 @@ const createActor = async (
     id: string,
     name: string,
     salary: number,
-    dateOfBirth: Date,
+    birth_date: Date,
     gender: string
 ): Promise<void> => {
     await connection
@@ -92,7 +92,7 @@ const createActor = async (
             id: id,
             name: name,
             salary: salary,
-            birth_date: dateOfBirth,
+            birth_date: birth_date,
             gender: gender,
         })
         .into("Actor");
@@ -159,13 +159,63 @@ app.get("/actor/:id", async (req: Request, res: Response) => {
 
 })
 
-app.get("/actor", async(req:Request, res:Response)=>{
+app.get("/actor", async (req: Request, res: Response) => {
     try {
-        const gender = req.query.gender as string
-        const count = await countActorByGender(gender)
+        if (!req.query.gender) {
+            const actors = await getActors()
+            res.status(200).send(actors)
+        } else if (req.query.gender) {
+            const gender = req.query.gender as string
+            const count = await countActorByGender(gender)
+            res.status(200).send(count)
+        }
 
-        res.status(200).send(count)
     } catch (error) {
         res.status(400).send(error.message)
+    }
+})
+
+// exercício 4
+
+app.post("/actor", async (req: Request, res: Response) => {
+    try {
+        await createActor(
+            req.body.id,
+            req.body.name,
+            req.body.salary,
+            new Date(req.body.birth_date),
+            req.body.gender
+        );
+
+        res.status(200).send();
+    } catch (err) {
+        res.status(400).send({
+            message: err.message,
+        });
+    }
+});
+
+app.put("/actor", async (req: Request, res: Response) => {
+    try {
+        await updateSalary(req.body.id, req.body.salary);
+
+        res.status(200).send("Salário Atualizado")
+    } catch (error) {
+        res.status(400).send({
+            message: error.message,
+        });
+    }
+})
+
+app.delete("/actor/:id", async (req: Request, res: Response) => {
+    try {
+        await deleteActor(req.params.id);
+
+        res.status(200).send("Ator deletado")
+        
+    } catch (error) {
+        res.status(400).send({
+            message: error.message,
+        });
     }
 })
