@@ -3,6 +3,7 @@ import cors from "cors";
 import { AddressInfo } from "net";
 import { createUser } from "./endpoints/createUser";
 import { getUserById } from "./endpoints/getUserById";
+import { editUserById } from "./endpoints/editUserById";
 
 
 const app: Express = express();
@@ -12,6 +13,7 @@ app.use(cors());
 
 app.post("/user", createUser);
 app.get("/user/:id", getUserById);
+app.put("/user/edit/:id", editUserById)
 
 
 
