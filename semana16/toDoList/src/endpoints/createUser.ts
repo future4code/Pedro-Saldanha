@@ -1,19 +1,16 @@
 import { Request, Response } from "express"
-import connection from "../connection";
-import { User } from "../types";
+import { addUserToTable } from "../data/addUserToTable";
 
-const addUserToTable = async (user: User): Promise<void> => {
-    await connection
-        .insert(
-            user
-        )
-        .into("ToDoListUser");
-};
 
 export const createUser = async (req: Request, res: Response) => {
 
     try {
-  
+
+        if (!req.body.name || !req.body.nickname || !req.body.email) {
+            res.status(400)
+                .send("Ocorreu algum erro, verifique os campos");
+        }
+
         await addUserToTable(
             {
                 id: Date.now().toString(),
@@ -22,9 +19,13 @@ export const createUser = async (req: Request, res: Response) => {
                 email: req.body.email
             }
         )
-        res.status(200).send("Usuário criado");
+        res.status(200)
+            .send("Usuário criado");
+
     } catch (error) {
-        //deu tudo errado
-        res.status(400).send("Ocorreu algum erro, verifique os campos");
+        res.status(400)
+            .send({
+                message: error.message || error.sqlMessage
+            });
     }
 };
