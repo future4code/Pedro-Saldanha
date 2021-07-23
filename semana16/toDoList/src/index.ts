@@ -1,8 +1,8 @@
 import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import connection from "./connection";
 import { createUser } from "./endpoints/createUser";
+import { getUserById } from "./endpoints/getUserById";
 
 
 const app: Express = express();
@@ -10,7 +10,8 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/user", createUser)
+app.post("/user", createUser);
+app.get("/user/:id", getUserById);
 
 
 

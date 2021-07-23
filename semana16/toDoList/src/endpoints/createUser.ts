@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import { addUserToTable } from "../data/addUserToTable";
+import addUserToTable from "../data/addUserToTable";
 
 
 export const createUser = async (req: Request, res: Response) => {
