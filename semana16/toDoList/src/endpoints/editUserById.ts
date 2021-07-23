@@ -6,15 +6,21 @@ export const editUserById = async (req: Request, res: Response) => {
 
     try {
 
-        if (!req.body.name || !req.body.nickname || !req.params.id) {
+        if (req.body.name === "" || req.body.nickname === "" || req.body.email === "") {
             res.status(400)
-                .send("Ocorreu algum erro, verifique os campos");
+                .send("Nenhum campo pode estar em branco");
+        }
+
+        if (!req.body.name && !req.body.nickname && !req.body.email) {
+            res.status(400)
+                .send("Preencha ao menos um campo");
         }
 
         await editUser(
+            req.params.id,
             req.body.name,
             req.body.nickname,
-            req.params.id
+            req.body.email
         )
         res.status(200)
             .send("Usuário atualizado");
