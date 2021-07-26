@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { getAllUsers } from "./endpoints/getAllUsers";
+import { getUserByType } from "./endpoints/getUserByType";
 
 
 const app: Express = express();
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/user", getAllUsers)
+app.get("/user/:type", getUserByType)
 
 
 
