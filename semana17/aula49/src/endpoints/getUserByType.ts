@@ -9,7 +9,7 @@ export const getUserByType = async (req: Request, res: Response): Promise<void> 
 
       if (!users.length) {
          res.statusCode = 404
-         throw new Error("No recipes found")
+         throw new Error(`${type} is not a valid type`)
       }
 
       res.status(200).send(users)
