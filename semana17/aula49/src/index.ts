@@ -5,6 +5,7 @@ import { getAllUsers } from "./endpoints/getAllUsers";
 import { getUserByType } from "./endpoints/getUserByType";
 import { getAndOrderUsers } from "./endpoints/getAndOrderUsers";
 import { getLimitedUsers } from "./endpoints/getLimitedUsers";
+import { getAllUsersCombined } from "./endpoints/getAllUsersCombined";
 
 
 const app: Express = express();
@@ -17,6 +18,8 @@ app.get("/user/:type", getUserByType)
 app.get("/userOrder", getAndOrderUsers)
 app.get("/userOrder", getAndOrderUsers)
 app.get("/userLimited", getLimitedUsers)
+
+app.get("/users", getAllUsersCombined)
 
 
 
