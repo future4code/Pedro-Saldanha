@@ -3,12 +3,18 @@ export type user = {
    name: string
    nickname: string
    email: string
-   address: string
+   zipcode: string
+   street?: string
+   number: string
+   complement?: string
+   neighborhood?: string
+   city?: string
+   state?: string
 }
 
 export type addressInfo = {
    street: string,
-   nighborhood: string,
+   neighborhood: string,
    city: string,
    state: string
 }

@@ -7,7 +7,7 @@ export const getAddressInfo = async (zipcode: string): Promise<addressInfo | nul
 
         return {
             street: result.data.logradouro,
-            nighborhood: result.data.bairro,
+            neighborhood: result.data.bairro,
             city: result.data.localidade,
             state: result.data.uf
         }
@@ -18,5 +18,3 @@ export const getAddressInfo = async (zipcode: string): Promise<addressInfo | nul
     }
 
 }
-
-getAddressInfo('22610-001').then(console.log).catch(console.log)
