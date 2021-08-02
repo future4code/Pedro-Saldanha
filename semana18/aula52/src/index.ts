@@ -1,0 +1,53 @@
+import express, { Express } from "express";
+import cors from "cors";
+import { AddressInfo } from "net";
+import connection from "./connection";
+import { Transaction } from "./types";
+
+
+const app: Express = express();
+
+app.use(express.json());
+app.use(cors());
+
+
+
+
+const server = app.listen(process.env.PORT || 3003, () => {
+    if (server) {
+        const address = server.address() as AddressInfo;
+        console.log(`Server is running in http://localhost:${address.port}`)
+    } else {
+        console.error("Failure upon starting server.")
+    }
+});
+
+// ex 1)
+// a) O constructor serve para executar ações/métodos ao criar uma nova instância (objeto) daquela determinada classe. Essas ações são declarada dentro do constructor.
+// b) Uma vez, pois apenas uma instância dessa clase foi criada
+// c) Criando métodos públicos para isso (getters e setters)
+class UserAccount {
+    private cpf: string;
+    private name: string;
+    private age: number;
+    private balance: number = 0;
+    private transactions: Transaction[] = [];
+
+    constructor(
+        cpf: string,
+        name: string,
+        age: number,
+    ) {
+        console.log("Chamando o construtor da classe UserAccount")
+        this.cpf = cpf;
+        this.name = name;
+        this.age = age;
+    }
+
+}
+
+const user1: UserAccount = new UserAccount (
+    "12345678945",
+    "Joao",
+    23,
+) 
