@@ -1,3 +1,4 @@
+import { UserAccount } from ".";
 
 export class Transaction {
     private description: string;
@@ -22,5 +23,19 @@ export class Transaction {
             description: this.description
         }
     }
+
+}
+
+export class Bank {
+    private accounts: UserAccount[];
+
+    constructor(accounts: UserAccount[]) {
+        this.accounts = accounts;
+    }
+
+    public getAccount(){
+        return this.accounts
+    }
+
 
 }
