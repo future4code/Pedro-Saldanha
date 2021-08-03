@@ -44,6 +44,17 @@ class UserAccount {
         this.age = age;
     }
 
+    public getUser() {
+        return {
+            name: this.name, 
+            transactions: this.transactions
+        }
+    }
+
+    public setTransaction(transaction: Transaction) {
+        this.transactions.push(transaction)
+    }
+
 }
 
 const user1: UserAccount = new UserAccount (
@@ -51,3 +62,15 @@ const user1: UserAccount = new UserAccount (
     "Joao",
     23,
 ) 
+
+const transaction1: Transaction = new Transaction (
+    "Compra onlaine",
+    50,
+    "02/08/2021",
+)
+
+user1.setTransaction(transaction1)
+
+console.log(transaction1.getTransaction())
+
+console.log(user1.getUser())
