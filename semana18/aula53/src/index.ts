@@ -109,41 +109,108 @@ console.log(
 export interface Client {
     name: string;
     // Refere-se ao nome do cliente
-  
+
     registrationNumber: number;
     // Refere-se ao número de cadastro do cliente na concessionária
-      // como se fosse um id
-  
+    // como se fosse um id
+
     consumedEnergy: number;
     // Refere-se à energia consumida pelo cliente no mês
-  
+
     calculateBill(): number;
     // Retorna o valor da conta em reais
-  }
+}
 
-  const client1: Client = {
-      name: "Gol",
-      registrationNumber: 1,
-      consumedEnergy: 100,
+const client1: Client = {
+    name: "Gol",
+    registrationNumber: 1,
+    consumedEnergy: 100,
 
-      calculateBill: () => {
-          return 2;
-      }
-  }
-
-  console.log(client1.name)
-  console.log(client1.registrationNumber)
-  console.log(client1.consumedEnergy)
-  console.log(client1.calculateBill())
-
-  export abstract class Place {
-    constructor(protected cep: string) {}
-  
-      public getCep(): string {
-          return this.cep;
+    calculateBill: () => {
+        return 2;
     }
-  }
+}
+
+console.log(client1.name)
+console.log(client1.registrationNumber)
+console.log(client1.consumedEnergy)
+console.log(client1.calculateBill())
+
+export abstract class Place {
+    constructor(protected cep: string) { }
+
+    public getCep(): string {
+        return this.cep;
+    }
+}
 
 //   const place: Place = new Place (
 //       "2261111"
 //   )
+
+export class Residence extends Place {
+    constructor(
+        protected residentsQuantity: number,
+        // Refere-se ao número de moradores da casa
+
+        cep: string
+    ) {
+        super(cep);
+    }
+
+    public getResidentsQuantity(): number {
+        return this.residentsQuantity
+    }
+}
+
+export class Commerce extends Place {
+    constructor(
+        protected floorsQuantity: number,
+        // Refere-se à quantidade de andares do lugar
+
+        cep: string
+    ) {
+        super(cep);
+    }
+
+    public getFloorsQuantity(): number {
+        return this.floorsQuantity
+    }
+}
+
+export class Industry extends Place {
+    constructor(
+        protected machinesQuantity: number,
+        // Refere-se à quantidade de máquinas do local 
+
+        cep: string
+    ) {
+        super(cep);
+    }
+
+    public getMachinesQuantity(): number {
+        return this.machinesQuantity
+    }
+}
+
+const residence1: Residence = new Residence (
+    10,
+    "22145778"
+)
+
+const commerce1: Commerce = new Commerce (
+    20,
+    "22410140"
+)
+
+const indusrty1: Industry = new Industry (
+    60,
+    "14058760"
+)
+
+console.log(residence1.getCep())
+console.log(commerce1.getCep())
+console.log(indusrty1.getCep())
+console.log(residence1.getResidentsQuantity())
+console.log(commerce1.getFloorsQuantity())
+console.log(indusrty1.getMachinesQuantity())
