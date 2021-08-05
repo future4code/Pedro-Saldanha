@@ -302,7 +302,7 @@ class CommercialClient extends Commerce implements Client {
 
 const commercialClient1: CommercialClient = new CommercialClient(
     "Mercadinho",
-    1,
+    2,
     2000,
     "6547896547892154",
     2,
@@ -312,3 +312,47 @@ const commercialClient1: CommercialClient = new CommercialClient(
 console.log(commercialClient1.getCnpj())
 console.log(commercialClient1.calculateBill())
 console.log(commercialClient1.getFloorsQuantity())
+
+class IndustrialClient extends Industry implements Client {
+    public name: string;
+    public registrationNumber: number;
+    public consumedEnergy: number;
+    private industryRegistration: number;
+
+    constructor(
+        name: string,
+        registrationNumber: number,
+        consumedEnergy: number,
+        industryRegistration: number,
+        machinesQuantity: number,
+        cep: string,
+    ) {
+        super(machinesQuantity, cep)
+
+        this.name = name, 
+        this.registrationNumber = registrationNumber,
+        this.consumedEnergy = consumedEnergy,
+        this.industryRegistration = industryRegistration
+    }
+
+    public getIndustryRegistration(): number {
+        return this.industryRegistration
+    }
+
+    public calculateBill(): number {
+        return (this.consumedEnergy * 0.45) + (this.machinesQuantity * 100)
+    }
+}
+
+const industrialClient1: IndustrialClient = new IndustrialClient(
+    "Ford",
+    3,
+    10000,
+    125,
+    24,
+    "12345678"
+)
+
+console.log(industrialClient1.getIndustryRegistration())
+console.log(industrialClient1.getMachinesQuantity())
+console.log(industrialClient1.calculateBill())

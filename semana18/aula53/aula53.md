@@ -18,3 +18,7 @@
 * a) Ele possui todas as propriedades de Client e Residence, pois extende Residence e implementa Client, além da propriedade própria cpf. Possui o método getCpf() para poder ter acesso ao cpf do cliente já que é uma propriedade privada e calculateBill() pois era uma propriedade da interface Client. Além de possuir o método getCep() e getResidentsQuantity(), pertencente a suas classes pai Residence e Place.
 ### Exercício 5
 * a) e b) A estrutura se mantém praticamente a mesma, mas como ela extende a classe Commerce e não a residence, ao invés de termos a propridade residentsQuantity vindo pelo super, nós temos a propriedade floorsQuantity. Além disso, como é um cliente comercial, no lugar do cpf há um cnpj.
+### Exercício 6
+* a) Deve ser filha de Industry. Pois assim como as anteriores, ela é um Place (lugar) que possui sua propriedade particular definida a partir do seu tipo, que é industrial, logo deve ser filha de Industry.
+* b) Deve implementar Client, pois assim como as anteriores ela também é um cliente e deve ter todas as características genéricas da interface Client.
+* c) para que não seja tão fácil alterar as informações das instâncias criadas.
