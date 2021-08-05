@@ -50,8 +50,8 @@ class User {
         return this.name
     }
 
-    public introduceYourself(): string {
-        return "Olá, bom dia!"
+    public introduceYourself(name: string): string {
+        return `Olá, sou ${name}. Bom dia!`
     }
 }
 
@@ -89,7 +89,7 @@ class Customer extends User {
 const customer1: Customer = new Customer(
     "id2",
     "maria@maria.com",
-    "maria",
+    "Maria",
     "654321",
     "789123456789321"
 )
@@ -99,7 +99,11 @@ console.log(customer1.getEmail())
 console.log(customer1.getName())
 console.log(customer1.purchaseTotal)
 console.log(customer1.getCreditCard())
-console.log(customer1.introduceYourself())
+console.log(
+    customer1.introduceYourself(
+        customer1.getName()
+    )
+)
 
 
 type employees = {
