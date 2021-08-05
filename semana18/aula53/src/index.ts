@@ -83,12 +83,19 @@ class Customer extends User {
 }
 
 const customer1: Customer = new Customer(
-    "id1",
-    "joao@joao.com",
-    "Joao",
-    "123456",
+    "id2",
+    "maria@maria.com",
+    "maria",
+    "654321",
     "789123456789321"
 )
+
+console.log(customer1.getId())
+console.log(customer1.getEmail())
+console.log(customer1.getName())
+console.log(customer1.purchaseTotal)
+console.log(customer1.getCreditCard())
+
 
 type employees = {
     salary: number;
