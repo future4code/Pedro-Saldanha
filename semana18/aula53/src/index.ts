@@ -18,9 +18,6 @@ const server = app.listen(process.env.PORT || 3003, () => {
     }
 });
 
-// 1)
-// a) não seria possível pois ela é privada e não há nenhum método público que imprima a senha.
-// b) uma vez, pois foi criada apenas uma instância dessa classe.
 
 class User {
     private id: string;
@@ -84,6 +81,14 @@ class Customer extends User {
         return this.creditCard;
     }
 }
+
+const customer1: Customer = new Customer(
+    "id1",
+    "joao@joao.com",
+    "Joao",
+    "123456",
+    "789123456789321"
+)
 
 type employees = {
     salary: number;
