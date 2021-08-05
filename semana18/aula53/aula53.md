@@ -14,5 +14,5 @@
 ### Exercício 2
 * a) O Typescript diz que não é possível criar uma instância de uma classe abstrata.
 * b) ela precisaria estar ligada a alguma outra classe utilizando extends?
-### Exercício 3
-* a) Não pois o password é uma propriedade privada dentro da classe User não há nenhum método público que o imprima.
+### Exercício 4
+* a) Ele possui todas as propriedades de Client e Residence, pois extende Residence e implementa Client, além da propriedade própria cpf. Possui o método getCpf() para poder ter acesso ao cpf do cliente já que é uma propriedade privada e calculateBill() pois era uma propriedade da interface Client. Além de possuir o método getCep(), pertencente a sua classe pai Residence.

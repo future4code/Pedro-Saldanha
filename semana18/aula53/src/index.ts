@@ -193,17 +193,17 @@ export class Industry extends Place {
     }
 }
 
-const residence1: Residence = new Residence (
+const residence1: Residence = new Residence(
     10,
     "22145778"
 )
 
-const commerce1: Commerce = new Commerce (
+const commerce1: Commerce = new Commerce(
     20,
     "22410140"
 )
 
-const indusrty1: Industry = new Industry (
+const indusrty1: Industry = new Industry(
     60,
     "14058760"
 )
@@ -214,3 +214,52 @@ console.log(indusrty1.getCep())
 console.log(residence1.getResidentsQuantity())
 console.log(commerce1.getFloorsQuantity())
 console.log(indusrty1.getMachinesQuantity())
+
+class ResidentialClient extends Residence implements Client {
+
+    public name: string;
+    public registrationNumber: number;
+    public consumedEnergy: number;
+    private cpf: string;
+
+
+    constructor(
+        name: string,
+        registrationNumber: number,
+        consumedEnergy: number,
+        cpf: string,
+        residentsQuantity: number,
+        cep: string,
+
+    ) {
+        super(residentsQuantity, cep);
+
+        this.name = name;
+        this.registrationNumber = registrationNumber;
+        this.consumedEnergy = consumedEnergy;
+        this.cpf = cpf;
+
+    }
+
+    public getCpf(): string {
+        return this.cpf
+    }
+
+    public calculateBill(): number {
+        return this.consumedEnergy * 0.75;
+    }
+
+
+}
+
+const residentialClient1: ResidentialClient = new ResidentialClient (
+    "Joao",
+    1,
+    100,
+    "123456789",
+    4,
+    "22445587"
+)
+
+console.log(residentialClient1.getCpf())
+console.log(residentialClient1.calculateBill())
