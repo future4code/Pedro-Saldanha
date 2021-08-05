@@ -249,10 +249,9 @@ class ResidentialClient extends Residence implements Client {
         return this.consumedEnergy * 0.75;
     }
 
-
 }
 
-const residentialClient1: ResidentialClient = new ResidentialClient (
+const residentialClient1: ResidentialClient = new ResidentialClient(
     "Joao",
     1,
     100,
@@ -263,3 +262,53 @@ const residentialClient1: ResidentialClient = new ResidentialClient (
 
 console.log(residentialClient1.getCpf())
 console.log(residentialClient1.calculateBill())
+console.log(residentialClient1.getResidentsQuantity())
+
+class CommercialClient extends Commerce implements Client {
+
+    public name: string;
+    public registrationNumber: number;
+    public consumedEnergy: number;
+    private cnpj: string;
+
+
+    constructor(
+        name: string,
+        registrationNumber: number,
+        consumedEnergy: number,
+        cnpj: string,
+        floorsQuantity: number,
+        cep: string,
+
+    ) {
+        super(floorsQuantity, cep);
+
+        this.name = name;
+        this.registrationNumber = registrationNumber;
+        this.consumedEnergy = consumedEnergy;
+        this.cnpj = cnpj;
+
+    }
+
+    public getCnpj(): string {
+        return this.cnpj
+    }
+
+    public calculateBill(): number {
+        return this.consumedEnergy * 0.53;
+    }
+
+}
+
+const commercialClient1: CommercialClient = new CommercialClient(
+    "Mercadinho",
+    1,
+    2000,
+    "6547896547892154",
+    2,
+    "22140154"
+)
+
+console.log(commercialClient1.getCnpj())
+console.log(commercialClient1.calculateBill())
+console.log(commercialClient1.getFloorsQuantity())

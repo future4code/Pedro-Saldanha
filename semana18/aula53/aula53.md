@@ -15,4 +15,6 @@
 * a) O Typescript diz que não é possível criar uma instância de uma classe abstrata.
 * b) ela precisaria estar ligada a alguma outra classe utilizando extends?
 ### Exercício 4
-* a) Ele possui todas as propriedades de Client e Residence, pois extende Residence e implementa Client, além da propriedade própria cpf. Possui o método getCpf() para poder ter acesso ao cpf do cliente já que é uma propriedade privada e calculateBill() pois era uma propriedade da interface Client. Além de possuir o método getCep(), pertencente a sua classe pai Residence.
+* a) Ele possui todas as propriedades de Client e Residence, pois extende Residence e implementa Client, além da propriedade própria cpf. Possui o método getCpf() para poder ter acesso ao cpf do cliente já que é uma propriedade privada e calculateBill() pois era uma propriedade da interface Client. Além de possuir o método getCep() e getResidentsQuantity(), pertencente a suas classes pai Residence e Place.
+### Exercício 5
+* a) e b) A estrutura se mantém praticamente a mesma, mas como ela extende a classe Commerce e não a residence, ao invés de termos a propridade residentsQuantity vindo pelo super, nós temos a propriedade floorsQuantity. Além disso, como é um cliente comercial, no lugar do cpf há um cnpj.
