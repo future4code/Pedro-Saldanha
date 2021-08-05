@@ -20,43 +20,69 @@ const server = app.listen(process.env.PORT || 3003, () => {
 
 // 1)
 // a) não seria possível pois ela é privada e não há nenhum método público que imprima a senha.
-// b) nenhuma pois não foi gerada nenhuma instância dessa classe.
+// b) uma vez, pois foi criada apenas uma instância dessa classe.
 
 class User {
     private id: string;
     private email: string;
     private name: string;
     private password: string;
-  
-    constructor(
-          id: string,
-          email: string,
-          name: string,
-          password: string
-      ){
-          console.log("Chamando o construtor da classe User")
-          this.id = id
-          this.email = email
-          this.name = name 
-          this.password = password
-      }
-  
-      public getId(): string {
-          return this.id
-      }
-  
-      public getEmail(): string {
-          return this.email
-      }
-  
-      public getName(): string {
-          return this.name
-      }
-  }
 
-type consumers = {
-    creditCard: number;
-    totalSpent: number;
+    constructor(
+        id: string,
+        email: string,
+        name: string,
+        password: string
+    ) {
+        console.log("Chamando o construtor da classe User")
+        this.id = id
+        this.email = email
+        this.name = name
+        this.password = password
+    }
+
+    public getId(): string {
+        return this.id
+    }
+
+    public getEmail(): string {
+        return this.email
+    }
+
+    public getName(): string {
+        return this.name
+    }
+}
+
+const user1: User = new User(
+    "id1",
+    "joao@joao.com",
+    "Joao",
+    "123456"
+)
+console.log(user1.getId())
+console.log(user1.getEmail())
+console.log(user1.getName())
+
+class Customer extends User {
+    public purchaseTotal: number = 0;
+    private creditCard: string;
+
+    constructor(
+        id: string,
+        email: string,
+        name: string,
+        password: string,
+        creditCard: string
+    ) {
+        super(id, email, name, password);
+        console.log("Chamando o construtor da classe Customer");
+        this.creditCard = creditCard;
+    }
+
+    public getCreditCard(): string {
+        return this.creditCard;
+    }
 }
 
 type employees = {
