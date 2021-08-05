@@ -49,6 +49,10 @@ class User {
     public getName(): string {
         return this.name
     }
+
+    public introduceYourself(): string {
+        return "Olá, bom dia!"
+    }
 }
 
 const user1: User = new User(
@@ -95,6 +99,7 @@ console.log(customer1.getEmail())
 console.log(customer1.getName())
 console.log(customer1.purchaseTotal)
 console.log(customer1.getCreditCard())
+console.log(customer1.introduceYourself())
 
 
 type employees = {
