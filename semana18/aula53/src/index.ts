@@ -135,3 +135,15 @@ export interface Client {
   console.log(client1.registrationNumber)
   console.log(client1.consumedEnergy)
   console.log(client1.calculateBill())
+
+  export abstract class Place {
+    constructor(protected cep: string) {}
+  
+      public getCep(): string {
+          return this.cep;
+    }
+  }
+
+//   const place: Place = new Place (
+//       "2261111"
+//   )
