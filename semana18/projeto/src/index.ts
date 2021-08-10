@@ -7,6 +7,7 @@ import { Ticket } from "./entities/Ticket";
 import { Purchase } from "./entities/Purchase";
 import { createUser } from "./endpoints/createUser";
 import { createProduct } from "./endpoints/createProduct";
+import { getUsers } from "./endpoints/getUsers";
 
 
 const app: Express = express();
@@ -16,6 +17,8 @@ app.use(cors());
 
 app.post("/user", createUser)
 app.post("/product", createProduct)
+
+app.get("/user", getUsers)
 
 
 
