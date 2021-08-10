@@ -5,13 +5,15 @@ import { createUser } from "./endpoints/createUser";
 import { createProduct } from "./endpoints/createProduct";
 import { getUsers } from "./endpoints/getUsers";
 import { getProducts } from "./endpoints/getProducts";
-
+import createTables from "./endpoints/createTables";
 
 const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
 
+
+app.post("/table", createTables)
 app.post("/user", createUser)
 app.post("/product", createProduct)
 
