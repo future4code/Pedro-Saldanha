@@ -1,43 +1,30 @@
-import { Request, Response } from "express-serve-static-core"
-// import moment from "moment";
-// import buscaEstudantes from "../data/buscaEstudantes";
-// import { estudante } from "../types/estudante";
-
-// const buscarEstudantePorTurma = async(req: Request, res: Response) => {
-
-// try {
-
-//     const idTurma = req.params.id
-
-//     if (!idTurma) {
-//         throw new Error("Insira uma turma");
-        
-//     }
-
-//     const result = await buscaEstudantes(idTurma)
-    
-//     if (!result) {
-//         res.status(404)
-//         throw new Error("Turma não encontrada");
-        
-//     }
-
-//     const estudantes = result.map((estudante: estudante) => {
-//         return {
-//             id: estudante.id,
-//             nome: estudante.nome,
-//             email: estudante.email,
-//             data_nasc: moment(estudante.data_nasc, 'YYYY-MM-DD').format('DD/MM/YYYY'),
-//             turma_id: estudante.turma_id
-//         }
-//     })
-
-//     res.status(200).send(estudantes)
-// } catch (error) {
-//     res.status(404).send(error.message || error.sqlMessage)
-// }
+import { Request, Response } from "express";
+import fetchTable from "../data/fetchTable";
+import { Product } from "../entities/Product";
 
 
-// }
+export const getProducts = async (req: Request, res: Response) => {
 
-// export default buscarEstudantePorTurma
+    try {
+
+        const result = await fetchTable('product')
+
+        if(result.length <= 0){
+            throw new Error("Produtos não encontrados");
+            
+        }
+
+        const products: Product[]  = result.map((product: any) => {
+            return {
+                name: product.name,
+                description: product.description,
+                price: product.price
+            }
+        })
+
+
+        res.status(200).send(products)
+    } catch (error) {
+        res.status(404).send(error.message || error.sqlMessage)
+    }
+}

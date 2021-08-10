@@ -9,7 +9,7 @@ export const getUsers = async (req: Request, res: Response) => {
 
         const result = await fetchTable('user')
 
-        if(!result){
+        if(result.length <= 0){
             throw new Error("Usuários não encontrados");
             
         }

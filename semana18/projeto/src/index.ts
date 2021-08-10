@@ -1,13 +1,10 @@
 import express, { Express } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import { User } from "./entities/User";
-import { Product } from "./entities/Product";
-import { Ticket } from "./entities/Ticket";
-import { Purchase } from "./entities/Purchase";
 import { createUser } from "./endpoints/createUser";
 import { createProduct } from "./endpoints/createProduct";
 import { getUsers } from "./endpoints/getUsers";
+import { getProducts } from "./endpoints/getProducts";
 
 
 const app: Express = express();
@@ -19,6 +16,7 @@ app.post("/user", createUser)
 app.post("/product", createProduct)
 
 app.get("/user", getUsers)
+app.get("/product", getProducts)
 
 
 
