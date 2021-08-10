@@ -1,30 +1,39 @@
-// import { Request, Response } from "express"
+import { Request, Response } from "express"
+import insertProduct from "../data/insertProduct"
+import { Product } from "../entities/Product"
 
 
-// export const criarDocente = async (
-//     req: Request,
-//     res: Response
-// ) => {
-//     try {
-//         if (!req.body.nome || !req.body.email || !req.body.dataNasc) {
-//             res.status(400).send("Os campos 'nome', 'email' e 'data de nascimento' precisam ser preenchidos.")
-//         }
-
+export const createProduct = async (
+    req: Request,
+    res: Response
+) => {
+    try {
+        if (!req.body.name || !req.body.description || !req.body.price) {
+            res.status(400).send("Os campos 'nome', 'descrição' e 'preço' precisam ser preenchidos.")
+        }
         
-//         await inserirDocente(
-//             id,
-//             req.body.nome, 
-//             req.body.email,
-//             dataAjustada
-//         )
+        const tempProduct:Product = new Product(
+            req.body.name,
+            req.body.description,
+            req.body.price
+        )
+        
+        const newProduct = tempProduct.getProduct()
 
-//         res.status(200).send({message:"Docente adicionado com sucesso."})
+        await insertProduct(
+            newProduct.id,
+            newProduct.name, 
+            newProduct.description,
+            newProduct.price
+        )
+
+        res.status(200).send({message:"Produto adicionado com sucesso."})
 
 
-//     } catch (error) {
-//         res.status(400).send({
-//             message: error.message || error.sqlMessage
-//         })
-//     }
+    } catch (error) {
+        res.status(400).send({
+            message: error.message || error.sqlMessage
+        })
+    }
 
-// }
+}

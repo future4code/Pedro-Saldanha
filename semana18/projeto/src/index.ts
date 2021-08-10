@@ -6,6 +6,7 @@ import { Product } from "./entities/Product";
 import { Ticket } from "./entities/Ticket";
 import { Purchase } from "./entities/Purchase";
 import { createUser } from "./endpoints/createUser";
+import { createProduct } from "./endpoints/createProduct";
 
 
 const app: Express = express();
@@ -14,12 +15,13 @@ app.use(express.json());
 app.use(cors());
 
 app.post("/user", createUser)
+app.post("/product", createProduct)
 
 
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
-    if(server) {
+    if (server) {
         const address = server.address() as AddressInfo;
         console.log(`Server is running in http://localhost:${address.port}`)
     } else {

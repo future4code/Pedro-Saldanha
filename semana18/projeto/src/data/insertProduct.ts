@@ -1,14 +1,19 @@
 import connection from "../connection";
 
 
-// export default async function inserirDocente(
-//     id: string,
-//     nome: string,
-//     email: string,
-//     dataNasc: string
-// ) {
-//     await connection.raw(`
-//      INSERT INTO labenu_system_docente (id, nome, email, data_nasc, turma_id)
-//      VALUES ('${id}', '${nome}', '${email}', '${dataNasc}', '1');
-//     `)
-// }
+export default async function insertProduct(
+    id: string,
+    name: string,
+    description: string,
+    price: string
+) {
+    await connection.raw(`
+        INSERT INTO labe_commerce_product(id, name, description, price)
+        VALUES(
+            "${id}",
+            "${name}",
+            "${description}",
+            "${price}"
+        );
+    `)
+}
