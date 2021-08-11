@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import connection from "../connection";
 import { addUser } from "../data/addUser";
 import { generateId } from "../services/generateId";
+import { generateToken } from "../services/generateToken";
 import { user } from "../types";
 
 export default async function createUser(
@@ -15,6 +16,16 @@ export default async function createUser(
       if (!email || !password) {
          res.statusCode = 422
          throw new Error("Preencha os campos 'password' e 'email'")
+      }
+
+      if (email.indexOf("@") === -1) {
+         res.statusCode = 422
+         throw new Error("Insira um 'email' válido")
+      }
+
+      if (password.length < 6) {
+         res.statusCode = 422
+         throw new Error("'password' deve ter ao menos 6 caracteres")
       }
 
       const [user] = await connection('aula_55_users')
@@ -31,7 +42,9 @@ export default async function createUser(
 
       await addUser(newUser)
 
-      res.status(201).send({ message: "usuário criado com sucesso" })
+      const token = generateToken({ id })
+
+      res.status(201).send({ message: "usuário criado com sucesso", token })
 
    } catch (error) {
 
