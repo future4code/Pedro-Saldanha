@@ -11,9 +11,9 @@
     password VARCHAR(64) NOT NULL
 );
 ```
-* c) 
+* c) função criada como addUser.
 ### Exercício 3
-* a)
+* a) A linha as string é uma garantia que nós estamos dando para o typescript que aquela informação vai chegar como uma string. É necessário usá-la ali pois aquela informação poderia ser de diferentes tipos além de string.
 
 ### Exercício 1
 * a) 
