@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import connection from "../connection";
+import { addUser } from "../data/addUser";
+import { generateId } from "../services/generateId";
 import { user } from "../types";
 
 export default async function createUser(
@@ -8,14 +10,14 @@ export default async function createUser(
 ): Promise<void> {
    try {
 
-      const { name, nickname, email, password } = req.body
+      const { email, password } = req.body
 
-      if (!name || !nickname || !email || !password) {
+      if (!email || !password) {
          res.statusCode = 422
-         throw new Error("Preencha os campos 'name','nickname', 'password' e 'email'")
+         throw new Error("Preencha os campos 'password' e 'email'")
       }
 
-      const [user] = await connection('to_do_list_users')
+      const [user] = await connection('aula_55_users')
          .where({ email })
 
       if (user) {
@@ -23,14 +25,13 @@ export default async function createUser(
          throw new Error('Email já cadastrado')
       }
 
-      const id: string = Date.now().toString()
+      const id: string = generateId()
 
-      const newUser: user = { id, name, nickname, email, password }
+      const newUser: user = { id, email, password }
 
-      await connection('to_do_list_users')
-         .insert(newUser)
+      await addUser(newUser)
 
-      res.status(201).send({ newUser })
+      res.status(201).send({ message: "usuário criado com sucesso" })
 
    } catch (error) {
 
