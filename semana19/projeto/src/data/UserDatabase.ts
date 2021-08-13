@@ -21,4 +21,12 @@ export class UserDatabase extends BaseDatabase {
 
         return user[0] && User.toUser(user[0]);
     }
+
+    public async getUserById(id:string): Promise<User> {
+        const user = await BaseDatabase.connection('cookenu_user')
+            .select('*')
+            .where({ id: id })
+
+        return user[0] && User.toUser(user[0]);
+    }
 }
