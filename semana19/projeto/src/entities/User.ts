@@ -14,4 +14,24 @@ export class User {
     static toUser(data: any): User {
         return new User(data.id, data.name, data.email, data.password)
     }
+
+    
+    public getId(){
+        return this.id
+    }
+
+    
+    public getEmail(){
+        return this.email
+    }
+
+    
+    public getName(){
+        return this.name
+    }
+
+    
+    public getPassword(){
+        return this.password
+    }
 }
