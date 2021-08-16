@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc && node ./build/index.js",
     "dev-start": "tsnd ./src/index.ts",
-    "migrations": "ts-node-dev ./src/endpoints/createTables.ts ",
+    "migrations": "tsnd ./src/data/MigrationsDatabase.ts ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
