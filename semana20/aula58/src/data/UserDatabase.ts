@@ -23,4 +23,12 @@ export class UserDatabase extends BaseDatabase {
 
         return user[0] && User.toUser(user[0]);
     }
+
+    public async getUsers(): Promise<User[]> {
+
+        const users = await BaseDatabase.connection('User_Arq')
+            .select('*')
+
+        return users ;
+    }
 }

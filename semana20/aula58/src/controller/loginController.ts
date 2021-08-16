@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import { loginBusiness } from "../business/loginBusiness";
-import { UserDatabase } from "../data/UserDatabase";
-import { Authenticator } from "../services/Authenticator";
-import { HashManager } from "../services/HashManager";
+
 
 export async function loginController(req: Request, res: Response) {
     try {
