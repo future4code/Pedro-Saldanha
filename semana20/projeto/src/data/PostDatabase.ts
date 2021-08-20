@@ -14,5 +14,11 @@ export class PostDatabase extends BaseDatabase {
             })
     }
 
-    async getById() { }
+    async getById(id: string) {
+        const post = await BaseDatabase.connection("labook_posts")
+            .select("*")
+            .where({ id })
+
+        return post[0] && Post.toPost(post[0]);
+    }
 }

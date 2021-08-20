@@ -45,5 +45,22 @@ export class PostBusiness {
         await postDatabase.create(newPost)
     }
 
-    async getById() { }
+    async getById(id: string, token: string) {
+
+        const tokenData: authenticationData = tokenManager.getData(token)
+
+        if (!id) {
+            throw new Error("'id must be provided")
+        }
+
+        const post: Post = await postDatabase.getById(id)
+
+        if (!post) {
+            throw new Error("Post not found")
+        }
+
+
+
+        return post
+    }
 }
