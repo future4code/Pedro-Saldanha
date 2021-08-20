@@ -9,7 +9,7 @@ export class Post {
         private photo: string,
         private description: string,
         private type: POST_TYPES,
-        private createdAt: Date,
+        private createdAt: string,
         private authorId: string
     ) { }
 
