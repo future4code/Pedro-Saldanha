@@ -12,5 +12,11 @@ export class UserDatabase extends BaseDatabase {
             })
     }
 
-    async login() { }
+    public async findUserByEmail(email: string): Promise<User> {
+
+        const user = await BaseDatabase.connection('labook_users')
+            .select('*')
+            .where({ email: email })
+        return user[0] && User.toUser(user[0]);
+    }
 }
