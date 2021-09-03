@@ -1,2 +1,2 @@
-GET http://localhost:3003/pokemon/bulbasaur
+GET http://localhost:3003/pokemon/charmander
 

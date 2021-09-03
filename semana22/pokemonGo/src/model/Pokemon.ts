@@ -1,14 +1,10 @@
-export interface UserInputDTO {
-    name: string | undefined,
-    email: string | undefined,
-    password: string | undefined,
-    role: string | undefined
+export interface PokemonInputDTO {
+    type: string | "%",
+    weather: string | "%",
+    familyId: string | "%",
+    size: number | 20
+    page: number | 1
 }
-
-export interface LoginInputDTO {
-    email: string | undefined,
-    password: string | undefined
-};
 
 export class Pokemon {
     constructor(
