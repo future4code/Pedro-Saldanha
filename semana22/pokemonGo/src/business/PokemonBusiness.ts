@@ -2,15 +2,17 @@ import { PokemonDatabase } from "../data/PokemonDatabase";
 import { CustomError } from "../error/CustomError";
 import { PokemonInputDTO } from "../model/Pokemon";
 
-const pokemonDatabase = new PokemonDatabase()
 
 export class PokemonBusiness {
+    constructor(
+        public pokemonDatabase: PokemonDatabase
+    ) { }
 
     async findPokemon(input: PokemonInputDTO) {
 
         const offset = input.size * (input.page - 1)
 
-        const pokemon = await pokemonDatabase.findPokemon(input, offset)
+        const pokemon = await this.pokemonDatabase.findPokemon(input, offset)
 
         if (!pokemon) {
             throw new CustomError(404, "pokemon not found")
@@ -25,7 +27,7 @@ export class PokemonBusiness {
             throw new CustomError(422, "'name' must be provided")
         }
 
-        const pokemon = await pokemonDatabase.findByName(name)
+        const pokemon = await this.pokemonDatabase.findByName(name)
 
         if (!pokemon) {
             throw new CustomError(404, "pokemon not found")
@@ -40,7 +42,7 @@ export class PokemonBusiness {
             throw new CustomError(422, "'pokedexNumber' must be provided")
         }
 
-        const pokemon = await pokemonDatabase.findByPokedexNumber(pokedexNumber)
+        const pokemon = await this.pokemonDatabase.findByPokedexNumber(pokedexNumber)
 
         if (!pokemon) {
             throw new CustomError(404, "pokemon not found")

@@ -1,8 +1,9 @@
 import { Request, Response } from 'express'
 import { PokemonBusiness } from '../business/PokemonBusiness'
+import { PokemonDatabase } from '../data/PokemonDatabase'
 import { PokemonInputDTO } from '../model/Pokemon'
 
-const pokemonBusiness = new PokemonBusiness()
+const pokemonBusiness = new PokemonBusiness(new PokemonDatabase())
 
 export class PokemonController {
 
@@ -43,7 +44,7 @@ export class PokemonController {
 
             res.status(200).send({ pokemon })
 
-        } catch (error: any) {
+        } catch (error:any) {
             let message = error.sqlMessage || error.message
             res.status(error.code || 400).send({ message })
         }

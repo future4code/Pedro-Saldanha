@@ -17,7 +17,7 @@ export class PokemonDatabase extends BaseDatabase {
         return pokemon[0][0] && pokemon[0].map((poke: any) => Pokemon.toPokemon(poke));
     }
 
-    public async findByName(name: string): Promise<Pokemon> {
+    public async findByName(name: string): Promise<Pokemon | undefined> {
 
         const pokemon = await BaseDatabase.connection(PokemonDatabase.TABLE_NAME)
             .select('*')
