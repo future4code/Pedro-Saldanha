@@ -1,0 +1,1 @@
+export const BASE_URL = "mock-api/v1/categories"
