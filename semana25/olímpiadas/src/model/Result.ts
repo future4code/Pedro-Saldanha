@@ -10,6 +10,15 @@ export interface ResultInputDTO {
     unity: RESULT_UNITY | undefined
 }
 
+export interface ResultOutputDTO {
+    position: number,
+    competition: string | undefined,
+    athlete: string | undefined,
+    value: number | undefined,
+    unity: RESULT_UNITY | undefined
+}
+
+
 export class Result {
     constructor(
         private competition: string,

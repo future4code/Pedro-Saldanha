@@ -31,13 +31,13 @@ export class ResultController {
         }
     }
 
-    async findByName(req: Request, res: Response) {
+    async findRank(req: Request, res: Response) {
         try {
-            let message = "Success!"
+            const { competition } = req.body
 
+            const result = await resultBusiness.findRank(competition)
 
-
-            res.status(201).send({ message })
+            res.status(201).send(result)
 
         } catch (error: any) {
             let message = error.sqlMessage || error.message
