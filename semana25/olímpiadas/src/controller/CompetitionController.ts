@@ -9,12 +9,11 @@ export class CompetitionController {
 
     async create(req: Request, res: Response) {
         try {
-            let message = "Success!"
-            const { name, status } = req.body
+            let message = "Competition created"
+            const { name } = req.body
 
             const input: CompetitionInputDTO = {
-                name,
-                status
+                name
             }
 
 

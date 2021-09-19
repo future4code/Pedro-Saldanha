@@ -5,7 +5,6 @@ export enum COMPETITION_STATUS {
 
 export interface CompetitionInputDTO {
     name: string | undefined,
-    status: COMPETITION_STATUS | undefined
 }
 
 export class Competition {
