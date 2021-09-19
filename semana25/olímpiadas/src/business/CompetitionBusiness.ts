@@ -31,6 +31,26 @@ export class CompetitionBusiness {
 
     }
 
+    async finish(input: CompetitionInputDTO) {
+        const { name } = input
+
+        if (!name) {
+            throw new CustomError(422, "'name' must be provided")
+        }
+
+        const competitionCheck = await this.competitionDatabase.findByName(name)
+
+        if (!competitionCheck) {
+            throw new CustomError(422, "competition doesn't exist")
+        }
+
+        if (competitionCheck.getStatus() === "finalizada") {
+            throw new CustomError(422, "competition already finished")
+        }
+
+        await this.competitionDatabase.updateStatus(name)
+    }
+
     async findByName(name: string) {
         const competition = await this.competitionDatabase.findByName(name)
 

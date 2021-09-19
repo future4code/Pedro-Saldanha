@@ -16,7 +16,6 @@ export class CompetitionController {
                 name
             }
 
-
             await competitionBusiness.create(input)
 
             res.status(201).send({ message })
@@ -27,11 +26,16 @@ export class CompetitionController {
         }
     }
 
-    async findByName(req: Request, res: Response) {
+    async finish(req: Request, res: Response) {
         try {
-            let message = "Success!"
+            let message = "Competition finished"
+            const { name } = req.body
 
+            const input: CompetitionInputDTO = {
+                name
+            }
 
+            await competitionBusiness.finish(input)
 
             res.status(201).send({ message })
 
