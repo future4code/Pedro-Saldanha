@@ -1,7 +1,7 @@
 import { CompetitionDatabase } from "../data/CompetitionDatabase";
 import { ResultDatabase } from "../data/ResultDatabase";
 import { CustomError } from "../error/CustomError";
-import { Result, ResultsInputDTO, RESULTS_UNITY } from "../model/Result";
+import { Result, ResultInputDTO, RESULT_UNITY } from "../model/Result";
 
 const competitionDatabase = new CompetitionDatabase()
 
@@ -10,12 +10,24 @@ export class ResultBusiness {
         private resultDatabase: ResultDatabase
     ) { }
 
-    async create(input: ResultsInputDTO) {
+    async register(input: ResultInputDTO) {
         const { competition, athlete, value, unity } = input
 
+        if (!competition || !athlete || !value || !unity) {
+            throw new CustomError(422, "'competition', 'athlete', 'value' and 'unity' must be provided")
+        }
 
+        const competitionCheck = await competitionDatabase.findByName(competition)
 
-        const newResult = new Result(competition as string, athlete as string, value as number, unity as RESULTS_UNITY)
+        if (!competitionCheck) {
+            throw new CustomError(422, "competition doesn't exist")
+        }
+
+        if (competitionCheck.getStatus() === "finalizada") {
+            throw new CustomError(422, "competition already finished")
+        }
+
+        const newResult = new Result(competition, athlete, value, unity)
 
 
         await this.resultDatabase.create(newResult)

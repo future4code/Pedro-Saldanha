@@ -1,27 +1,27 @@
 import { Request, Response } from 'express'
 import { ResultBusiness } from '../business/ResultBusiness'
 import { ResultDatabase } from '../data/ResultDatabase'
-import { ResultsInputDTO } from '../model/Result'
+import { ResultInputDTO } from '../model/Result'
 
 
 const resultBusiness = new ResultBusiness(new ResultDatabase)
 
-export class CompetitionController {
+export class ResultController {
 
-    async create(req: Request, res: Response) {
+    async register(req: Request, res: Response) {
         try {
-            let message = "Success!"
+            let message = "Result registered"
             const { competition, athlete, value, unity } = req.body
 
-            const input: ResultsInputDTO = {
+            const input: ResultInputDTO = {
                 competition,
                 athlete,
-                value,
+                value: Number(value),
                 unity
             }
 
 
-            await resultBusiness.create(input)
+            await resultBusiness.register(input)
 
             res.status(201).send({ message })
 

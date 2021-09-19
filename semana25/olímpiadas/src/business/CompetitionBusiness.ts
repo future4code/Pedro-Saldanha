@@ -51,11 +51,4 @@ export class CompetitionBusiness {
         await this.competitionDatabase.updateStatus(name)
     }
 
-    async findByName(name: string) {
-        const competition = await this.competitionDatabase.findByName(name)
-
-        return competition
-
-    }
-
 }

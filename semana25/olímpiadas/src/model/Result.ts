@@ -1,13 +1,13 @@
-export enum RESULTS_UNITY {
+export enum RESULT_UNITY {
     SECONDS = "s",
     METERS = "m"
 }
 
-export interface ResultsInputDTO {
+export interface ResultInputDTO {
     competition: string | undefined,
     athlete: string | undefined,
     value: number | undefined,
-    unity: RESULTS_UNITY | undefined
+    unity: RESULT_UNITY | undefined
 }
 
 export class Result {
@@ -15,7 +15,7 @@ export class Result {
         private competition: string,
         private athlete: string,
         private value: number,
-        private unity: RESULTS_UNITY
+        private unity: RESULT_UNITY
     ) { }
 
     getCompetition(): string {
@@ -30,7 +30,7 @@ export class Result {
         return this.value;
     };
 
-    getUnity(): RESULTS_UNITY {
+    getUnity(): RESULT_UNITY {
         return this.unity
     }
 
@@ -46,7 +46,7 @@ export class Result {
         this.value = newValue;
     };
 
-    setUnity(newUnity: RESULTS_UNITY): void {
+    setUnity(newUnity: RESULT_UNITY): void {
         this.unity = newUnity;
     };
 
