@@ -55,30 +55,32 @@ export class ResultBusiness {
 
         if (tempResult && tempResult[0].getUnity() === "m") {
 
-            // tempResult.sort(function (a, b) {
-            //     return a.getAthlete().localeCompare(b.getAthlete())
-            // })
+            tempResult.sort(function (a, b) {
+                return a.getAthlete().localeCompare(b.getAthlete())
+            })
 
-            // let result = []
+            let result = []
 
-            // let higherResult: Result = tempResult[0];
+            let higherResult: Result = tempResult[0];
 
-            // for (let i = 0; i < tempResult.length; i++) {
-            //     let j = 1
-            //     if (tempResult[i].getAthlete() === tempResult[j].getAthlete()) {
-            //         if (tempResult[j].getValue() > higherResult.getValue()) {
-            //             higherResult = tempResult[j]
-            //         }
-            //         console.log(higherResult)
-            //     }
+            for (let i = 0; i < tempResult.length - 1; i++) {
+                if (tempResult[i].getAthlete() === tempResult[i + 1].getAthlete()) {
+                    if (tempResult[i + 1].getValue() > higherResult.getValue()) {
+                        higherResult = tempResult[i + 1]
+                    }
+                }
 
-            //     if (tempResult[i].getAthlete() !== tempResult[j].getAthlete()) {
-            //         result.push(higherResult)
-            //         higherResult = tempResult[j]
-            //     }
-            // }
+                if (tempResult[i].getAthlete() !== tempResult[i + 1].getAthlete() || i === tempResult.length - 2) {
+                    result.push(higherResult)
+                    higherResult = tempResult[i + 1]
+                }
+            }
 
-            return tempResult
+            result.sort(function (a, b) {
+                return b.getValue() - (a.getValue())
+            })
+
+            return result
         } else if (tempResult && tempResult[0].getUnity() === "s") {
             order = "ASC"
         }
