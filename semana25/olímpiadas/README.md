@@ -3,14 +3,15 @@
 
 * Clonar este repositório
 * Executar `npm install` para adicionar as dependências
+* Criar as tabelas olympic_competitions e olympic_results no MySQL
 * Criar um arquivo .env na raiz do projeto e preencher as chaves a seguir com os valores apropriados:
    ```
    DB_HOST = 
    DB_USER = 
    DB_PASSWORD = 
    DB_SCHEMA = 
-   
    ```
+* Caso deseje apenas acessar os endpoints da API, acesse o link do Postman abaixo
 
 ## Documentação dos endpoints no Postman
 
