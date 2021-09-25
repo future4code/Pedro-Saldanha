@@ -1,7 +1,7 @@
 export const goToHome = (history) => {
-    history.pushState("/")
+    history.push("/")
 }
 
-export const goToDetails = (history) => {
-    history.pushState("/movie/:id")
+export const goToDetails = (history, id) => {
+    history.push(`/movie/${id}`)
 }

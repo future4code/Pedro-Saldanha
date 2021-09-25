@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Header from "../../components/Header/Header";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import GlobalStateContext from "../../global/GlobalStateContext";
+import { CardsContainer } from "./styled";
 
 
 const HomePage = () => {
@@ -10,14 +11,9 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <MovieCard />
-      <div>
-        {
-          movies.results && movies.results.map((movie) => {
-            return <p key={movie.title}>{movie.title}</p>
-          })
-        }
-      </div>
+      <CardsContainer>
+        <MovieCard movies={movies} />
+      </CardsContainer>
     </div>
   );
 }

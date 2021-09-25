@@ -8,13 +8,19 @@ import { LANGUAGE } from "../constants/language";
 
 const GlobalState = (props) => {
     const [movies, setMovies] = useState([])
+    const [currentPage, setCurrentPage] = useState("")
 
     useEffect(() => {
+        setCurrentPage("1")
         getMovies()
     }, [])
 
+    useEffect(() => {
+        getMovies()
+    }, [currentPage])
+
     const getMovies = () => {
-        axios.get(`${BASE_URL}/3/movie/popular?api_key=${API_KEY}&${LANGUAGE}`)
+        axios.get(`${BASE_URL}/popular?api_key=${API_KEY}&${LANGUAGE}&page=${currentPage}`)
             .then((res) => {
                 setMovies(res.data)
             })
@@ -23,7 +29,7 @@ const GlobalState = (props) => {
             })
     }
 
-    const data = { movies, setMovies }
+    const data = { movies, setMovies, currentPage, setCurrentPage }
 
 
     return (

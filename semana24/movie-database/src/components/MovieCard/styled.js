@@ -1,28 +1,5 @@
 import styled from "styled-components";
 
-export const MainContainer = styled.div`
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    padding:12px;
-
-    @media (max-width: 699px){
-        padding:12px;
-    }
-`
-
-export const TextContainer = styled.div`
-    text-align:start;
-    width:32vw;
-    margin-left:40px;
-    @media (max-width: 699px){
-        text-align:start;
-        width:80%;
-        margin-left:0px;
-    }
-`
-
 export const Card = styled.div`
     width:350px;
     height:520px;
@@ -35,7 +12,6 @@ export const Card = styled.div`
         cursor: pointer;
     }
 `
-
 export const MovieImg = styled.div`
     width:100%;
     height:100%;
@@ -45,4 +21,15 @@ export const MovieImg = styled.div`
     display: flex;
     flex-direction: column;
     justify-Content: flex-end;
+`
+
+
+export const TextContainer = styled.div`
+    width: 100%;
+    box-sizing:border-box;
+    margin:0;
+    padding:0 16px;
+    color:white;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, transparent 0%, black 80%);
 `
