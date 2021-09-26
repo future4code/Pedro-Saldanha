@@ -23,6 +23,10 @@ export const TextContainer = styled.div`
     h1, h3{
         color:#FFFFFF;
     }
+
+    h4{
+        text-align:justify;
+    }
     @media (max-width: 699px){
         text-align:start;
         width:80%;
