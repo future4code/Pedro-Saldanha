@@ -1,10 +1,10 @@
 https://peu-movie-database.surge.sh/
-# <h1 align='center'> Filmes Populares </h1>
+# <h1 align='center'> 🎞️Filmes Populares🎞️</h1>
 
  ## Sobre
-### Veja os filmes em alta no momento
-Aplicação de visualização de.  Desenvolvida em React.js
+Veja os filmes em alta no momento
 
+Aplicação para ver os filmes populares e seus detalhes.  Desenvolvida em React.js
 Projeto desenvolvido como estudo.
 
 ## Libs utilizadas
