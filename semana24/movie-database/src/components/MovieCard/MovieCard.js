@@ -7,7 +7,6 @@ import { Card, MovieImg, TextContainer } from "./styled";
 const MovieCard = (props) => {
   const history = useHistory()
   const { movies } = props
-  console.log(movies)
 
   return (
     <>

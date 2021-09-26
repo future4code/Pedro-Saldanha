@@ -1,16 +1,20 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Card, MovieImg } from "./styled";
+import { useHistory } from "react-router";
+import { BackArrow, Card, MovieImg } from "./styled";
 import { API_KEY } from "../../constants/apiKey";
 import { LANGUAGE } from "../../constants/language";
 import { BASE_URL } from "../../constants/urls";
 import { MainContainer, TextContainer } from "./styled";
+import { goBack } from "../../routes/coordinator";
 
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({})
   const { id } = useParams()
+  const history = useHistory()
+
 
   const getMovieDetails = () => {
     axios.get(`${BASE_URL}/${id}?api_key=${API_KEY}&${LANGUAGE}`)
@@ -32,10 +36,9 @@ const MovieDetails = () => {
 
   const formatedDate = movie && movie.release_date && formatDate(movie.release_date)
 
-
-  console.log(movie)
   return (
     <MainContainer>
+      <BackArrow onClick={() => goBack(history)} />
       <Card key={movie && movie.title}>
         <MovieImg style={movie && movie.title && { backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.poster_path})` }} />
       </Card>

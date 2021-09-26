@@ -6,9 +6,11 @@ export const MainContainer = styled.div`
     align-items:center;
     flex-wrap:wrap;
     padding:12px;
+    margin-top:40px;
 
     @media (max-width: 699px){
         padding:12px;
+        margin-top:0;
     }
 `
 
@@ -36,9 +38,6 @@ export const Card = styled.div`
     transition: 0.3s;
     border-radius: 5px;
 
-    &:hover{
-        cursor: pointer;
-    }
 `
 
 export const MovieImg = styled.div`
@@ -50,4 +49,31 @@ export const MovieImg = styled.div`
     display: flex;
     flex-direction: column;
     justify-Content: flex-end;
+`
+
+export const BackArrow = styled.div`
+    width: 3vmin;
+	height: 3vmin;
+	background: transparent;
+	border-top: 1vmin solid white;
+	border-right: 1vmin solid white;
+	box-shadow: 0 0 0 lightgray;
+	transition: all 200ms ease;
+	
+	
+	left: 0;
+	transform: translate3d(0,-50%,0) rotate(-135deg);
+
+    margin:24px;
+
+	
+	&:hover {
+		border-color: #99AABB;
+		box-shadow: 0.5vmin -0.5vmin 0 white;
+        cursor: pointer;
+	}
+
+    @media (max-width: 699px){
+        margin:8px;
+    }
 `

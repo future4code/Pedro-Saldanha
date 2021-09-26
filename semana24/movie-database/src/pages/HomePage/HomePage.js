@@ -7,7 +7,6 @@ import { ButtonsContainer, CardsContainer, StyledButton } from "./styled";
 
 const HomePage = () => {
   const { movies, currentPage, setCurrentPage } = useContext(GlobalStateContext)
-  console.log(currentPage)
 
   function scrollToTop() {
     window.scrollTo(0, 0);
