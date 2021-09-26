@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Header from "../../components/Header/Header";
+import GenreFilter from "../../components/GenreFilter/GenreFilter";
 import MovieCard from "../../components/MovieCard/MovieCard";
 import GlobalStateContext from "../../global/GlobalStateContext";
 import { ButtonsContainer, CardsContainer, StyledButton } from "./styled";
@@ -35,7 +35,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header />
+      <GenreFilter />
       <CardsContainer>
         <MovieCard movies={movies} />
       </CardsContainer>
