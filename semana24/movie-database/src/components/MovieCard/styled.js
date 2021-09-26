@@ -29,7 +29,7 @@ export const TextContainer = styled.div`
     box-sizing:border-box;
     margin:0;
     padding:0 16px;
-    color:white;
+    color:#FFFFFF;
     border-radius: 5px;
     background: linear-gradient(to bottom, transparent 0%, black 80%);
 `

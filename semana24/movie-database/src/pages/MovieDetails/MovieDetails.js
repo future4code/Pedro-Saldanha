@@ -40,7 +40,7 @@ const MovieDetails = () => {
         <MovieImg style={movie && movie.title && { backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.poster_path})` }} />
       </Card>
       <TextContainer>
-        <h2>{movie.title}</h2>
+        <h1>{movie.title}</h1>
         <h3>{movie.tagline}</h3>
         <h5>Título original: {movie.original_title}</h5>
         <h4>{movie.overview}</h4>
