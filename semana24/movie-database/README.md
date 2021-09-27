@@ -1,4 +1,3 @@
-https://peu-movie-database.surge.sh/
 # <h1 align='center'> 🎞️Filmes Populares🎞️</h1>
 
  ## Sobre
@@ -16,7 +15,13 @@ Projeto desenvolvido como estudo.
 <a href="https://peu-movie-database.surge.sh/">peu-movie-database.surge.sh</a>
 
 ## Para rodar localmente
-Clone esse repositório. Instale as dependências (npm install) e rode o comando npm run start.
+- Clone esse repositório
+- Instale as dependências (npm install) 
+- Rode o comando npm run start
+- Crie um arquivo .env na raiz do projeto e preencha a chave a seguir com os valores apropriados:
+   ```
+   REACT_APP_API_KEY =
+   ```
 
 ## Recursos
 - Página inicial
