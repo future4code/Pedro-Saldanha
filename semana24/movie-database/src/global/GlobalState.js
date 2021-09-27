@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY } from "../constants/apiKey";
 import { BASE_URL } from "../constants/urls";
 import GlobalStateContext from "./GlobalStateContext";
 import axios from "axios"
@@ -21,7 +20,7 @@ const GlobalState = (props) => {
     }, [currentPage, currentGenre])
 
     const getMovies = () => {
-        axios.get(currentGenre ? `${BASE_URL}/popular?api_key=${API_KEY}&${LANGUAGE}&page=${currentPage}&with_genres=${currentGenre}` : `${BASE_URL}/popular?api_key=${API_KEY}&${LANGUAGE}&page=${currentPage}`)
+        axios.get(currentGenre ? `${BASE_URL}/popular?api_key=${process.env.REACT_APP_API_KEY}&${LANGUAGE}&page=${currentPage}&with_genres=${currentGenre}` : `${BASE_URL}/popular?api_key=${process.env.REACT_APP_API_KEY}&${LANGUAGE}&page=${currentPage}`)
             .then((res) => {
                 setMovies(res.data)
             })

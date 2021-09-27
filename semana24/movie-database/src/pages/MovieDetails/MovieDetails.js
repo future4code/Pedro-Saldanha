@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router";
 import { BackArrow, Card, MovieImg } from "./styled";
-import { API_KEY } from "../../constants/apiKey";
 import { LANGUAGE } from "../../constants/language";
 import { BASE_URL } from "../../constants/urls";
 import { MainContainer, TextContainer } from "./styled";
@@ -17,7 +16,7 @@ const MovieDetails = () => {
 
 
   const getMovieDetails = () => {
-    axios.get(`${BASE_URL}/${id}?api_key=${API_KEY}&${LANGUAGE}`)
+    axios.get(`${BASE_URL}/${id}?api_key=${process.env.REACT_APP_API_KEY}&${LANGUAGE}`)
       .then((res) => {
         setMovie(res.data)
       })
